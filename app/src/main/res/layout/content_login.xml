@@ -47,14 +47,21 @@
         android:layout_marginEnd="8dp"
         android:id="@+id/linearLayout2">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CPF*"
+            android:textSize="18sp" />
+
         <EditText
             android:id="@+id/edtCpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="CPF"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,13 +77,20 @@
         android:layout_marginEnd="8dp"
         android:id="@+id/linearLayout3">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Senha*"
+            android:textSize="18sp" />
+
         <EditText
             android:id="@+id/edtSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Senha"
             android:inputType="textPassword" />
     </LinearLayout>
 
