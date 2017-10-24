@@ -33,5 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         EditText cpf = (EditText) findViewById(R.id.edtCpf);
         EditText senha = (EditText) findViewById(R.id.edtSenha);
         Toast.makeText(this, "CPF "+cpf.getText().toString()+" senha "+senha.getText().toString(), Toast.LENGTH_LONG).show();
+
+        Intent intentPrincipal = new Intent(LoginActivity.this, PrincipalActivity.class);
+        startActivity(intentPrincipal);
     }
 }

@@ -25,7 +25,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
+            android:label="Login"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,15 @@
         </activity>
         <activity
             android:name=".CadastroActivity"
-            android:label="@string/title_activity_cadastro"
+            android:label="Cadastro"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PrincipalActivity"
+            android:label="Principal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MenuActivity"
+            android:label="Menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
