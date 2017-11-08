@@ -32,8 +32,8 @@ public class RecargaActivity extends AppCompatActivity {
         valorRecarga = (EditText) findViewById(R.id.edtValorRecarga);
         cpf = (EditText) findViewById(R.id.edtCpf);
 
-        cartaoCreditoDebito = (ImageButton) findViewById(R.id.ibCartaoCreditoDebito);
-        boleto = (ImageButton) findViewById(R.id.ibBoleto);
+        //cartaoCreditoDebito = (ImageButton) findViewById(R.id.ibCartaoCreditoDebito);
+        //boleto = (ImageButton) findViewById(R.id.ibBoleto);
 
         saldoDisponivel = (TextView) findViewById(R.id.tvValorSaldoDisponivel);
         saldoGasto = (TextView) findViewById(R.id.tvValorSaldoGasto);
@@ -41,14 +41,14 @@ public class RecargaActivity extends AppCompatActivity {
         transSaldo = (TextView) findViewById(R.id.tvValorTransSaldo);
 
 
-        cartaoCreditoDebito.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().
-                        beginTransaction().
-                        replace(R.id.fragment_cartao, new CartaoCreditoFragment()).commit();
-            }
-        });
+//        cartaoCreditoDebito.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getSupportFragmentManager().
+//                        beginTransaction().
+//                        replace(R.id.fragment_cartao, new CartaoCreditoFragment()).commit();
+//            }
+//        });
 
     }
 

@@ -1,0 +1,89 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gustavo.easypasse.CartaoBoletoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/black"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FORMA DE PAGAMENTO"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout14"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/black"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.98"
+            android:text="Cartão de crédito/débito"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Boleto bancário"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutCartaoBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/black"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ibCartaoCredito"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:src="@drawable/cartao_de_credito_01" />
+
+        <ImageButton
+            android:id="@+id/ibBoleto"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:src="@drawable/boleto_bancario_01" />
+    </LinearLayout>
+</FrameLayout>
