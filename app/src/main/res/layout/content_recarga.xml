@@ -73,7 +73,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/llContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/black"
@@ -84,6 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
 
         <include
+            android:id="@+id/includeCartaoCreditoDebito"
             layout="@layout/fragment_cartao_boleto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -101,7 +102,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+        app:layout_constraintTop_toBottomOf="@+id/llContainer">
 
         <TextView
             android:id="@+id/textView10"

@@ -76,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/black"
+            android:onClick="cartaoCreditoDebito"
             android:src="@drawable/cartao_de_credito_01" />
 
         <ImageButton
