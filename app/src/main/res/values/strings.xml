@@ -10,6 +10,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_recarga">Recarga</string>
 
+    <string-array name="spinnerAmigos">
+        <item>Fulano</item>
+        <item>Beltrano</item>
+        <item>Ciclano</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tranferencia_recarga">TranferenciaRecargaActivity</string>
 </resources>
