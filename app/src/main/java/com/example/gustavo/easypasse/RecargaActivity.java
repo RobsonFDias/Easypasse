@@ -1,5 +1,6 @@
 package com.example.gustavo.easypasse;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -41,7 +42,12 @@ public class RecargaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("TAG", "Botão chamado");
-                //getSupportFragmentManager().beginTransaction().add(R.id.llContainer);
+                getSupportFragmentManager().
+                        beginTransaction().
+                        //replace(R.id.llContainer, new CartaoCreditoFragment()).commit();
+                        replace(R.id.includeCartaoCreditoDebito, new CartaoCreditoFragment()).commit();
+
+
             }
         });
 
