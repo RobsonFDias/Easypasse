@@ -27,11 +27,13 @@
             android:name=".LoginActivity"
             android:label="Login"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".CadastroActivity"
@@ -40,10 +42,6 @@
         <activity
             android:name=".PrincipalActivity"
             android:label="Principal"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MenuActivity"
-            android:label="Menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RecargaActivity"
@@ -58,6 +56,10 @@
         <activity
             android:name=".TranferenciaRecargaActivity"
             android:label="@string/title_activity_tranferencia_recarga"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SideMenuActivity"
+            android:label="@string/title_activity_side_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
