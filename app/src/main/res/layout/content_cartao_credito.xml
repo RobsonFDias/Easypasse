@@ -18,7 +18,8 @@
         android:text="Valor de"
         android:textColor="@android:color/background_light"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edtValorRecarga"
