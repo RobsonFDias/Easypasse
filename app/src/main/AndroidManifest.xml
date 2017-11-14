@@ -60,6 +60,14 @@
         <activity
             android:name=".SideMenuActivity"
             android:label="@string/title_activity_side_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CartaoCreditoActivity"
+            android:label="@string/title_activity_cartao_credito"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BoletoActivity"
+            android:label="@string/title_activity_boleto"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

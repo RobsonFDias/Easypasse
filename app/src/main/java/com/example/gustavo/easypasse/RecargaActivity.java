@@ -1,6 +1,7 @@
 package com.example.gustavo.easypasse;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,14 +13,7 @@ import android.widget.TextView;
 
 public class RecargaActivity extends AppCompatActivity {
 
-    private EditText valorRecarga;
-    private EditText cpf;
-    private ImageButton cartaoCreditoDebito;
-    private ImageButton boleto;
-    private TextView saldoDisponivel;
-    private TextView saldoGasto;
-    private TextView renovarRecarga;
-    private TextView transSaldo;
+    private ImageButton cartaoCredito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,26 +22,13 @@ public class RecargaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        valorRecarga = (EditText) findViewById(R.id.edtValorRecarga);
-        cpf = (EditText) findViewById(R.id.edtCpf);
+        cartaoCredito  = (ImageButton) findViewById(R.id.ibCartaoCredito);
 
-        saldoDisponivel = (TextView) findViewById(R.id.tvValorSaldoDisponivel);
-        saldoGasto = (TextView) findViewById(R.id.tvValorSaldoGasto);
-        renovarRecarga = (TextView) findViewById(R.id.tvDataRenovarRecarga);
-        transSaldo = (TextView) findViewById(R.id.tvValorTransSaldo);
-
-        cartaoCreditoDebito = (ImageButton) findViewById(R.id.ibCartaoCredito);
-
-        cartaoCreditoDebito.setOnClickListener(new View.OnClickListener() {
+        cartaoCredito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("TAG", "Botão chamado");
-                getSupportFragmentManager().
-                        beginTransaction().
-                        //replace(R.id.llContainer, new CartaoCreditoFragment()).commit();
-                        replace(R.id.includeCartaoCreditoDebito, new CartaoCreditoFragment()).commit();
-
-
+                Intent intentCartaoCredito = new Intent(RecargaActivity.this, CartaoCreditoActivity.class);
+                startActivity(intentCartaoCredito);
             }
         });
 

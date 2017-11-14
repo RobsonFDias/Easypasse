@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.gustavo.easypasse.RecargaActivity"
-    tools:showIn="@layout/activity_recarga">
-
+    tools:context="com.example.gustavo.easypasse.CartaoCreditoActivity"
+    tools:showIn="@layout/activity_cartao_credito">
 
     <TextView
         android:id="@+id/tvValorDe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:text="Valor de"
         android:textColor="@android:color/background_light"
@@ -25,14 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_blue_bright"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
-        app:layout_constraintStart_toEndOf="@+id/tvValorDe"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -51,6 +49,8 @@
         android:layout_width="281dp"
         android:layout_height="20dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_blue_bright"
@@ -78,24 +78,13 @@
         android:id="@+id/tvCartaoCredito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Cartão de crédito/débito"
         android:textColor="@android:color/background_light"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFormaDePagamento" />
-
-    <TextView
-        android:id="@+id/tvBoleto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Boleto bancário"
-        android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvCartaoCredito"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFormaDePagamento" />
 
     <ImageButton
@@ -106,32 +95,67 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorAccent"
-        app:layout_constraintEnd_toStartOf="@+id/ibBoleto"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCartaoCredito"
         app:srcCompat="@drawable/cartao_de_credito_01" />
 
     <ImageButton
-        android:id="@+id/ibBoleto"
+        android:id="@+id/imageButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibCartaoCredito"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBoleto"
-        app:srcCompat="@drawable/boleto_bancario_01" />
+        app:layout_constraintHorizontal_bias="0.732"
+        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/ibCartaoCredito"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.732"
+        app:layout_constraintStart_toEndOf="@+id/imageButton6"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tvSaldoDisponivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="60dp"
         android:text="Saldo Disponível"
         android:textColor="@android:color/background_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibCartaoCredito" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
 
     <TextView
         android:id="@+id/tvSaldoGasto"
@@ -139,13 +163,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="60dp"
         android:text="Saldo Gasto"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toEndOf="@+id/tvSaldoDisponivel"
-        app:layout_constraintTop_toBottomOf="@+id/ibBoleto" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
     <TextView
         android:id="@+id/tvValorSaldoDisponivel"
@@ -163,6 +187,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="96dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="96dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="20,00"
@@ -176,6 +202,7 @@
         android:id="@+id/tvDataRenovarRecarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:text="Data renovar recarga"

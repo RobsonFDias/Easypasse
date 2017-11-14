@@ -20,4 +20,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tranferencia_recarga">TranferenciaRecargaActivity</string>
     <string name="title_activity_side_menu">SideMenuActivity</string>
+    <string name="title_activity_cartao_credito">CartaoCreditoActivity</string>
+    <string name="title_activity_boleto">BoletoActivity</string>
 </resources>
