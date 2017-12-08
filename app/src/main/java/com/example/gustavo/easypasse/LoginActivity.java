@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,11 +52,28 @@ public class LoginActivity extends AppCompatActivity {
         dadosJsonObject.toString();
         Log.d("Dados enviados", dadosJsonObject.toString());
 
-        final JsonObjectRequest json = new JsonObjectRequest(Request.Method.POST,
+        JsonObjectRequest json = new JsonObjectRequest(Request.Method.POST,
                 "http://easypasse.com.br/gestao/wsLogin.php", dadosJsonObject, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("Response", response.toString());
+
+                JSONObject obj = response;
+
+                try {
+                    if (!obj.isNull("usuario") && obj.getString("error").toString().toUpperCase().equals("SUCESSO")) {
+                        JSONArray ja = obj.getJSONArray("usuario");
+
+                        for (int i = 0, tam = ja.length(); i < tam; i++) {
+                            JSONObject joUsuario = ja.getJSONObject(i);
+
+                            Log.d("Usuario", joUsuario.getInt("idUsuario") + " > " + joUsuario.getString("nome"));
+                        }
+                    }
+                } catch (JSONException e) {
+                    Log.d("Error", e.getMessage());
+                }
+
             }
         }, new Response.ErrorListener() {
             @Override
