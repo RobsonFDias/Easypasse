@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONException;
@@ -38,16 +41,31 @@ public class CadastroActivity extends AppCompatActivity {
                 usuario = (EditText) findViewById(R.id.edtUsuario);
                 cpf = (EditText) findViewById(R.id.edtCpf);
                 senha = (EditText) findViewById(R.id.edtSenha);
-                Log.d("dados", "usuario "+usuario.getText().toString()+
-                        " cpf "+cpf.getText().toString()+
-                        " senha "+Utilitarios.md5(senha.getText().toString()));
+//                Log.d("dados", "usuario "+usuario.getText().toString()+
+//                        " cpf "+cpf.getText().toString()+
+//                        " senha "+Utilitarios.md5(senha.getText().toString()));
 
                 JSONObject dadosJsonObject = new JSONObject();
                 try {
                     dadosJsonObject.put("username", usuario.getText().toString() );
                     dadosJsonObject.put("cpf", cpf.getText().toString() );
                     dadosJsonObject.put("senha", Utilitarios.md5(senha.getText().toString()) );
-                    //dadosJsonObject.put("method", "app-get-login" );
+                    dadosJsonObject.put("method", "app-set-usuario");
+                    dadosJsonObject.toString();
+                    //Log.d("Dados que vão", dadosJsonObject.toString());
+
+                    JsonObjectRequest dadosObjReq = new JsonObjectRequest(Request.Method.POST,
+                            "http://easypasse.com.br/gestao/wsCadastro.php", dadosJsonObject, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.d("Dados que vem", response.toString());
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    });
 
                 } catch (JSONException e) {
                     e.printStackTrace();
