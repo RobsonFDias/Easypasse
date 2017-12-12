@@ -64,7 +64,14 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d("Retorno", response.toString());
+                        //Log.d("Retorno", response.toString());
+                        try {
+                            String msgAlerta = response.getString("msg");
+                            Toast.makeText(LoginActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {

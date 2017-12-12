@@ -4,9 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidStudioV3.iml" filepath="$PROJECT_DIR$/AndroidStudioV3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Easypasse.iml" filepath="$PROJECT_DIR$/Easypasse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Easypasse.iml" filepath="$PROJECT_DIR$/Easypasse.iml" />
       <module fileurl="file://P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\Easypasse.iml" filepath="P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\Easypasse.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\app\app.iml" filepath="P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
