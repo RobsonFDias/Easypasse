@@ -16,10 +16,19 @@
         <item>Ciclano</item>
     </string-array>
 
+    <string-array name="spSexo">
+        <item>Masculino</item>
+        <item>Feminino</item>
+        <item>Outros</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tranferencia_recarga">TranferenciaRecargaActivity</string>
     <string name="title_activity_side_menu">SideMenuActivity</string>
     <string name="title_activity_cartao_credito">CartaoCreditoActivity</string>
     <string name="title_activity_boleto">BoletoActivity</string>
+    <string name="title_activity_cadastro_complemento">CadastroComplementoActivity</string>
+    <string name="title_activity_logarse_cadastrarse">LogarseCadastrarseActivity</string>
+    <string name="title_activity_logar_cadastrar">LogarCadastrarActivity</string>
 </resources>

@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@drawable/edit_corner"
             android:ems="10"
             android:inputType="textPersonName" />
     </LinearLayout>
@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@drawable/edit_corner"
             android:ems="10"
             android:inputType="number" />
     </LinearLayout>
@@ -126,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@drawable/edit_corner"
             android:ems="10"
             android:inputType="textPassword" />
     </LinearLayout>
@@ -151,7 +151,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Salvar" />
+            android:background="@drawable/button_corner_black"
+            android:text="Salvar"
+            android:textColor="@android:color/holo_blue_dark" />
     </LinearLayout>
 
     <LinearLayout
@@ -173,8 +175,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/button_corner_black"
             android:onClick="voltarLogin"
-            android:text="Voltar" />
+            android:text="Voltar"
+            android:textColor="@android:color/holo_blue_dark" />
     </LinearLayout>
 
 

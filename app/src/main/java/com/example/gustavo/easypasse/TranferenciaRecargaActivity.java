@@ -22,7 +22,7 @@ public class TranferenciaRecargaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        spinnerAmigos = (Spinner) findViewById(R.id.spinnerAmigos);
+//        spinnerAmigos = (Spinner) findViewById(R.id.spinnerAmigos);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.spinnerAmigos, android.R.layout.simple_spinner_item);

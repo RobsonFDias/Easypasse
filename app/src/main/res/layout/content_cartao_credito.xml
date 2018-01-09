@@ -28,7 +28,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/edit_corner"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,8 @@
         android:text="CPF"
         android:textColor="@android:color/background_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvValorDe" />
+        app:layout_constraintTop_toBottomOf="@+id/tvValorDe"
+        android:layout_marginLeft="16dp" />
 
     <EditText
         android:id="@+id/editText2"
@@ -54,7 +55,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/edit_corner"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +110,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ibCartaoCredito"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="80dp" />
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -122,7 +124,9 @@
         app:layout_constraintHorizontal_bias="0.732"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:layout_constraintTop_toBottomOf="@+id/ibCartaoCredito"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="8dp" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -132,7 +136,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="80dp" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -145,7 +150,9 @@
         app:layout_constraintHorizontal_bias="0.732"
         app:layout_constraintStart_toEndOf="@+id/imageButton6"
         app:layout_constraintTop_toBottomOf="@+id/imageButton5"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/tvSaldoDisponivel"
@@ -156,7 +163,8 @@
         android:text="Saldo Disponível"
         android:textColor="@android:color/background_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
+        android:layout_marginLeft="48dp" />
 
     <TextView
         android:id="@+id/tvSaldoGasto"
@@ -170,7 +178,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toEndOf="@+id/tvSaldoDisponivel"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/tvValorSaldoDisponivel"
@@ -181,7 +191,8 @@
         android:text="R$ 850,00"
         android:textColor="@android:color/background_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSaldoDisponivel" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSaldoDisponivel"
+        android:layout_marginLeft="60dp" />
 
     <TextView
         android:id="@+id/tvValorSaldoGasto"
@@ -236,7 +247,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDataRenovarRecarga"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="60dp" />
 
     <TextView
         android:id="@+id/textView31"

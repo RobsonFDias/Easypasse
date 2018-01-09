@@ -21,14 +21,14 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Spinner
-        android:id="@+id/spinnerAmigos"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+    <!--<Spinner-->
+        <!--android:id="@+id/spinnerAmigos"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:background="@android:color/black"-->
+        <!--tools:ignore="MissingConstraints"-->
+        <!--tools:layout_editor_absoluteX="0dp"-->
+        <!--tools:layout_editor_absoluteY="19dp" />-->
 
     <ImageView
         android:id="@+id/imageView4"
@@ -39,7 +39,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerAmigos"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+        <!--app:layout_constraintTop_toTopOf="@+id/spinnerAmigos"-->
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
@@ -65,7 +66,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/edit_corner"
         android:ems="10"
         android:inputType="textPersonName|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,13 +93,15 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/edit_corner"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvCpf"
-        app:layout_constraintTop_toBottomOf="@+id/edtValorRecarga" />
+        app:layout_constraintTop_toBottomOf="@+id/edtValorRecarga"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/NCelular"
@@ -119,22 +122,24 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@drawable/edit_corner"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/NCelular"
-        app:layout_constraintTop_toBottomOf="@+id/edtCpf" />
+        app:layout_constraintTop_toBottomOf="@+id/edtCpf"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:background="@android:color/black"
+        android:background="@drawable/button_corner"
         android:text="Enviar Recarga"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
