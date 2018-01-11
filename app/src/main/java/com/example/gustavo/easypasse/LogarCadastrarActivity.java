@@ -1,6 +1,7 @@
 package com.example.gustavo.easypasse;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -29,12 +30,18 @@ public class LogarCadastrarActivity extends AppCompatActivity {
     private EditText senha;
     private RequestQueue mVolleyRequest;
 
+    Typeface raleway;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logar_cadastrar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        raleway = Typeface.createFromAsset(getAssets(), "font/Raleway-Regular,ttf");
+        botaoacessar.setTypeface(raleway);
+        botaoCadastrar.setTypeface(raleway);
 
         cpf = (EditText) findViewById(R.id.edtCpf);
         senha = (EditText) findViewById(R.id.edtSenha);
