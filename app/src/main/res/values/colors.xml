@@ -3,7 +3,11 @@
     <color name="colorPrimary">#252f39</color>
     <color name="colorPrimaryDark">#252f39</color>
     <color name="colorAccent">#252f39</color>
-
+    <color name="actionBar">#47597D</color>
     <color name="colorVerde">#4dd166</color>
     <color name="colorAzul">#3598dc</color>
+    <color name="white">#fafafa</color>
+    <color name="colorFundoMenu">#1A2127</color>
+    <color name="colorClickMenu">#101418</color>
+    <color name="colorAzulClaro">#4C91C8</color>
 </resources>
