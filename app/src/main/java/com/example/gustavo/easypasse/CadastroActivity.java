@@ -40,7 +40,7 @@ public class CadastroActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        raleway = Typeface.createFromAsset(getAssets(), "font/Raleway-Regular,ttf");
+        raleway = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Regular.ttf");
 
         usuario.setTypeface(raleway);
         cpf.setTypeface(raleway);

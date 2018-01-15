@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvMensagem"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -56,10 +56,10 @@
         android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMensagem" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tvSaldoDisponivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -73,7 +73,7 @@
         android:layout_marginLeft="48dp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tvSaldoGasto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
@@ -85,7 +85,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/tvSaldoDisponivel"
         app:layout_constraintTop_toBottomOf="@+id/btnPainelAcesso"
         android:layout_marginRight="35dp"
         android:layout_marginLeft="8dp" />
@@ -105,7 +105,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tvValorSaldoGasto"
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/tvSaldoDisponivel"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="40dp" />
 
@@ -121,11 +121,11 @@
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/tvSaldoGasto"
         android:layout_marginRight="60dp" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tvDataRenovarRecarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -139,7 +139,7 @@
         android:layout_marginLeft="36dp" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tvTransferenciaDeSaldo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -166,7 +166,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/tvDataRenovarRecarga"
         app:layout_constraintVertical_bias="0.045"
         android:layout_marginLeft="48dp" />
 
@@ -187,7 +187,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvDataRenovaRecarga"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/tvTransferenciaDeSaldo"
         app:layout_constraintVertical_bias="0.045"
         android:layout_marginRight="64dp"
         android:layout_marginLeft="8dp" />

@@ -39,9 +39,7 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        raleway = Typeface.createFromAsset(getAssets(), "font/Raleway-Regular,ttf");
-        botaoacessar.setTypeface(raleway);
-        botaoCadastrar.setTypeface(raleway);
+        raleway = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Regular.ttf");
 
         cpf = (EditText) findViewById(R.id.edtCpf);
         senha = (EditText) findViewById(R.id.edtSenha);
@@ -50,6 +48,9 @@ public class LogarCadastrarActivity extends AppCompatActivity {
 
         botaoacessar = (Button) findViewById(R.id.btnAcessar);
         botaoCadastrar = (Button) findViewById(R.id.btnCadastre_se);
+
+        botaoacessar.setTypeface(raleway);
+        botaoCadastrar.setTypeface(raleway);
 
         botaoacessar.setOnClickListener(new View.OnClickListener() {
             @Override
