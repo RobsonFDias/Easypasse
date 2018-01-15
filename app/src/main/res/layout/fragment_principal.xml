@@ -21,7 +21,7 @@
                 android:gravity="center"
                 android:text="Saldo"
                 android:textColor="@color/colorAzulClaro"
-                android:textSize="18pt" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:gravity="center"
                 android:text="R$ 1000,00"
                 android:textColor="@color/white"
-                android:textSize="25pt"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -54,7 +54,7 @@
                     android:background="@drawable/button_corner_black"
                     android:text="Faça uma recarga"
                     android:textColor="@color/white"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -73,7 +73,7 @@
                     android:background="@drawable/button_corner_black"
                     android:text="Transfira uma recarga"
                     android:textColor="@color/white"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
