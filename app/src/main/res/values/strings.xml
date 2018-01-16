@@ -30,20 +30,20 @@
         <item>Configurações</item>
         <item>Ajuda</item>
         <item>Localizar Onibus</item>
-        <item>Iniciar</item>
+        <item>Indicar</item>
         <item>Bloqueio Créditos</item>
         <item>Créditos</item>
         <item>Histórico</item>
     </string-array>
 
     <array name="nav_drawer_icons">
-        <item>@drawable/ic_menu_principal</item>
+        <item>@drawable/ic_tela_inicial</item>
         <item>@drawable/ic_menu_minha_conta</item>
         <item>@drawable/ic_menu_configuracoes</item>
         <item>@drawable/ic_menu_ajuda</item>
-        <item>@drawable/ic_menu_ajuda</item>
-        <item>@drawable/ic_menu_iniciar</item>
-        <item>@drawable/ic_menu_bloqueio_creditos</item>
+        <item>@drawable/ic_localizar_onibus</item>
+        <item>@drawable/ic_menu_indicar</item>
+        <item>@drawable/ic_menu_bloqueio_de_creditos</item>
         <item>@drawable/ic_menu_creditos</item>
         <item>@drawable/ic_menu_historico</item>
     </array>

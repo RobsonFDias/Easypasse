@@ -193,6 +193,30 @@ public class MainActivity extends AppCompatActivity {
             case 0:
                 fragment = new PrincipalFragment();
                 break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+                fragment = new AjudaFragment();
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            case 7:
+
+                break;
+            case 8:
+
+                break;
             default:
                 break;
         }

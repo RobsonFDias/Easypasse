@@ -59,6 +59,7 @@
             android:id="@+id/edtUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ralewayregular"
             android:layout_weight="1"
             android:background="@drawable/edit_corner"
             android:ems="10"
@@ -95,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/edit_corner"
+            android:fontFamily="@font/ralewayregular"
             android:ems="10"
             android:inputType="number" />
     </LinearLayout>
@@ -126,6 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/ralewayregular"
             android:background="@drawable/edit_corner"
             android:ems="10"
             android:inputType="textPassword" />

@@ -8,6 +8,6 @@
     <color name="colorAzul">#3598dc</color>
     <color name="white">#fafafa</color>
     <color name="colorFundoMenu">#1A2127</color>
-    <color name="colorClickMenu">#101418</color>
-    <color name="colorAzulClaro">#4C91C8</color>
+    <color name="colorClickMenu">#3C4E5C</color>
+    <color name="colorAzulClaro">#3598DC</color>
 </resources>

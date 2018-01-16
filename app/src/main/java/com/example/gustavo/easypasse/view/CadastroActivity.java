@@ -31,20 +31,12 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText senha;
     private RequestQueue mVolleyRequest;
 
-    Typeface raleway;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        raleway = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Regular.ttf");
-
-        usuario.setTypeface(raleway);
-        cpf.setTypeface(raleway);
-        senha.setTypeface(raleway);
 
         mVolleyRequest = Volley.newRequestQueue(this);
 

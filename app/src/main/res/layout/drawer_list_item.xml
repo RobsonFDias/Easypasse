@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:paddingBottom="20dp"
-    android:paddingTop="20dp"
+    android:layout_height="wrap_content"
     android:background="@color/colorFundoMenu"
-    android:gravity="center_vertical" >
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="7dp"
-        android:layout_marginRight="7dp"
         android:contentDescription="@string/mnu"
         android:src="@drawable/user_slinding" />
 
@@ -23,24 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
         android:layout_toEndOf="@+id/icon"
         android:layout_toRightOf="@+id/icon"
-        android:paddingRight="40dp"
-        android:text="Teste"
+        android:layout_marginTop="-15dp"
+        android:fontFamily="@font/ralewayregular"
+        android:textSize="14sp"
+        android:text="Localizar Onibus"
         android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="22"
-        android:gravity="center"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/round_border"
-        android:textColor="@color/white" />
-
-</RelativeLayout>
+</LinearLayout>
