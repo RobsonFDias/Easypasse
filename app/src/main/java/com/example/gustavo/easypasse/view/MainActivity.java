@@ -212,10 +212,10 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case 7:
-
+                fragment = new CreditosFragment();
                 break;
             case 8:
-
+                fragment = new HistoricoFragment();
                 break;
             default:
                 break;
