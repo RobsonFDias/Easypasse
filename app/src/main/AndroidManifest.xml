@@ -22,11 +22,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".view.LoginActivity"
-            android:label="Login"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
             android:name=".view.CadastroActivity"
             android:label="Cadastro"
             android:theme="@style/AppTheme.NoActionBar" />
