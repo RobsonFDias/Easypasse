@@ -20,6 +20,125 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_logar_cadastrar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.example.gustavo.easypasse.view.LogarCadastrarActivity"
+        tools:showIn="@layout/activity_logar_cadastrar">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logo_easypasse_800x244" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edtCpf"
+            android:layout_width="300dp"
+            android:layout_height="80px"
+            android:layout_marginTop="84dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_corner"
+            android:ems="10"
+            android:hint="CPF"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorAzul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edtSenha"
+            android:layout_width="300dp"
+            android:layout_height="80px"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_corner"
+            android:ems="10"
+            android:hint="Senha"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorAzul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCpf"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnAcessar"
+            android:layout_width="300dp"
+            android:layout_height="80px"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_corner_black"
+            android:fontFamily="@font/ralewayregular"
+            android:text="Acesse"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Esqueceu a senha?"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.246"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAcessar"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnCadastre_se"
+            android:layout_width="300dp"
+            android:layout_height="80px"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/button_corner_black"
+            android:fontFamily="@font/ralewayregular"
+            android:text="Cadastre-se"
+            android:textColor="@color/colorVerde"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23"
+            tools:ignore="MissingConstraints" />
+
+    </android.support.constraint.ConstraintLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>
