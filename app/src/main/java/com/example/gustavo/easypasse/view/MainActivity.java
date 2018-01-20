@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.gustavo.easypasse.R;
 import com.example.gustavo.easypasse.adapter.NavDrawerListAdapter;
+import com.example.gustavo.easypasse.utils.ObjetosTransitantes;
 
 import java.util.ArrayList;
 
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         savedInstanceStates = savedInstanceState;
         setContentView(R.layout.activity_main);
+
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+
+        ObjetosTransitantes.MAIN_ACTIVITY = this;
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,33 +86,21 @@ public class MainActivity extends AppCompatActivity {
 
         navDrawerItems = new ArrayList<NavDrawerItem>();
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
-        if (!quantNotification.equals("0")) {
-            navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1), true, quantNotification));
-        } else {
-            navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-        }
-
-        if (!quantNotification.equals("0")) {
-            navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1), true, quantNotification));
-        } else {
-            navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
-        }
-
-        if (quantNotification.equals("0")) {
-            navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
-        } else {
-            navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, quantNotification));
-        }
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuIcons.getResourceId(7, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuIcons.getResourceId(8, -1)));
-        //navMenuIcons.recycle();
+        navMenuIcons.recycle();
 
-        mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
+
         adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
         mDrawerList.setAdapter(adapter);
+        mDrawerList.setItemChecked(0, true);
+        mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
         if (savedInstanceStates == null) {
             displayView(0);
@@ -167,24 +161,9 @@ public class MainActivity extends AppCompatActivity {
     private class SlideMenuClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            mudaCorFundoMenu(parent, position);
             displayView(position);
         }
 
-    }
-
-    private void mudaCorFundoMenu(AdapterView<?> parent, Integer position) {
-        try {
-            for (int i = 0; i < parent.getChildCount(); i++) {
-                if (i == position) {
-                    parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.colorClickMenu));
-                } else {
-                    parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.colorFundoMenu));
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void displayView(int position) {

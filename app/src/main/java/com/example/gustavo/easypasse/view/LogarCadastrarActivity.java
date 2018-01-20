@@ -34,16 +34,12 @@ public class LogarCadastrarActivity extends AppCompatActivity {
     private EditText senha;
     private RequestQueue mVolleyRequest;
 
-    //Typeface raleway;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logar_cadastrar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //raleway = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Regular.ttf");
 
 
         cpf = (EditText) findViewById(R.id.edtCpf);
@@ -52,9 +48,7 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         mVolleyRequest = Volley.newRequestQueue(this);
 
         botaoacessar = (Button) findViewById(R.id.btnAcessar);
-        //botaoacessar.setTypeface(raleway);
         botaoCadastrar = (Button) findViewById(R.id.btnCadastre_se);
-        //botaoCadastrar.setTypeface(raleway);
 
         botaoacessar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +109,4 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         });
 
     }
-
-
 }

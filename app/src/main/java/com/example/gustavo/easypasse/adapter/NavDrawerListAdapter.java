@@ -2,7 +2,9 @@ package com.example.gustavo.easypasse.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Typeface;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +47,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
+
             LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.drawer_list_item, null);
         }
@@ -52,8 +55,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);
         TextView txtTitle = (TextView) convertView.findViewById(R.id.title);
 
-
-        imgIcon.setImageResource(navDrawerItems.get(position).getIcon());
+        imgIcon.setImageDrawable(VectorDrawableCompat.create(context.getResources(), navDrawerItems.get(position).getIcon(), null));
         txtTitle.setText(navDrawerItems.get(position).getTitle());
 
         return convertView;

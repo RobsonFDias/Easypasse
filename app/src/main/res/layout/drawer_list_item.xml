@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemMenu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorFundoMenu"
-    android:gravity="center"
+    android:background="@drawable/menu_selecionado"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="5dp"
     android:paddingTop="5dp">
@@ -14,20 +15,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:contentDescription="@string/mnu"
-        android:src="@drawable/user_slinding" />
+        android:contentDescription="@string/mnu"/>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:gravity="center"
         android:layout_toEndOf="@+id/icon"
         android:layout_toRightOf="@+id/icon"
-        android:layout_marginTop="-15dp"
         android:fontFamily="@font/ralewayregular"
         android:textSize="14sp"
         android:text="Localizar Onibus"
+        android:layout_marginTop="-10dp"
         android:textColor="@color/white" />
 
 </LinearLayout>

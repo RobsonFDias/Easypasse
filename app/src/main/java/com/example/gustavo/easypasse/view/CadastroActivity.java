@@ -93,8 +93,7 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     public void voltarLogin(View view) {
-        Intent voltar = new Intent(CadastroActivity.this, LogarCadastrarActivity.class);
-        startActivity(voltar);
+        startActivity(new Intent(CadastroActivity.this, LogarCadastrarActivity.class));
     }
 
 
