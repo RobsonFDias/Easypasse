@@ -1,7 +1,7 @@
-package com.example.gustavo.easypasse.view;
+package br.com.easypasse.view;
 
 /**
- * Created by Jargs on 23/09/2015.
+ * Created by Jargs on 03/01/2018.
  */
 public class NavDrawerItem {
     private String title;

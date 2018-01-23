@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.config;
+package br.com.easypasse.config;
 
 /**
  * Created by Lincoln on 13/01/18.

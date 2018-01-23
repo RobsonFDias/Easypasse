@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.view;
+package br.com.easypasse.view;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.gustavo.easypasse.R;
+import br.com.easypasse.R;
 
 
 public class PrincipalFragment extends Fragment {

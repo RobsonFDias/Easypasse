@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.utils;
+package br.com.easypasse.utils;
 
 import android.util.Log;
 

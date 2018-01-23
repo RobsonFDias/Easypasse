@@ -1,6 +1,6 @@
-package com.example.gustavo.easypasse.utils;
+package br.com.easypasse.utils;
 
-import com.example.gustavo.easypasse.view.MainActivity;
+import br.com.easypasse.view.MainActivity;
 
 /**
  * Created by Robson Dias on 20/01/2018.

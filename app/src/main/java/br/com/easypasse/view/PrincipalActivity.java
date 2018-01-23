@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.view;
+package br.com.easypasse.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.gustavo.easypasse.R;
+import br.com.easypasse.R;
 
 public class PrincipalActivity extends AppCompatActivity {
 

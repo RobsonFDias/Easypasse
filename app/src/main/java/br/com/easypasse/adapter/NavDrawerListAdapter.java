@@ -1,9 +1,7 @@
-package com.example.gustavo.easypasse.adapter;
+package br.com.easypasse.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.gustavo.easypasse.R;
-import com.example.gustavo.easypasse.view.NavDrawerItem;
+import br.com.easypasse.R;
+import br.com.easypasse.view.NavDrawerItem;
 
 import java.util.ArrayList;
 

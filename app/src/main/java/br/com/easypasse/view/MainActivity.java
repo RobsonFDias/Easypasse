@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.view;
+package br.com.easypasse.view;
 
 import android.annotation.SuppressLint;
 import android.content.res.TypedArray;
@@ -20,11 +20,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.example.gustavo.easypasse.R;
-import com.example.gustavo.easypasse.adapter.NavDrawerListAdapter;
-import com.example.gustavo.easypasse.utils.ObjetosTransitantes;
+import br.com.easypasse.R;
 
 import java.util.ArrayList;
+
+import br.com.easypasse.adapter.NavDrawerListAdapter;
+import br.com.easypasse.utils.ObjetosTransitantes;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;

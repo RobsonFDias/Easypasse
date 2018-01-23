@@ -1,7 +1,6 @@
-package com.example.gustavo.easypasse.view;
+package br.com.easypasse.view;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,11 +16,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.gustavo.easypasse.R;
-import com.example.gustavo.easypasse.utils.Utilitarios;
+import br.com.easypasse.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import br.com.easypasse.utils.Utilitarios;
 
 public class CadastroActivity extends AppCompatActivity {
 
