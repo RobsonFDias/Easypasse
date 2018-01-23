@@ -18,6 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
 import br.com.easypasse.R;
 
 import org.json.JSONException;
@@ -34,7 +35,7 @@ public class LogarCadastrarActivity extends AppCompatActivity {
     private EditText cpf;
     private EditText senha;
     private RequestQueue mVolleyRequest;
-    private String msgAlerta;
+    private String msgAlerta, retorno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,9 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         botaoacessar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new FazerLogin().execute();
+                if (validaCampos()) {
+                    new FazerLogin().execute();
+                }
             }
         });
 
@@ -92,12 +95,27 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject json) {
             pDialog.dismiss();
+            if (retorno.equals("Sucesso")) {
+                Intent principalIntent = new Intent(LogarCadastrarActivity.this, PrincipalActivity.class);
+                startActivity(principalIntent);
+            } else {
+                Toast.makeText(LogarCadastrarActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
+            }
 
-            Toast.makeText(LogarCadastrarActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
-
-            Intent principalIntent = new Intent(LogarCadastrarActivity.this, PrincipalActivity.class);
-            startActivity(principalIntent);
         }
+    }
+
+    private boolean validaCampos() {
+        if (cpf.getText().toString().equals("")) {
+            Toast.makeText(LogarCadastrarActivity.this, "Campo CPF vazio", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if (senha.getText().toString().equals("")) {
+            Toast.makeText(LogarCadastrarActivity.this, "Campo Senha vazio", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        return true;
     }
 
     private JSONObject fazerLogin() {
@@ -116,8 +134,8 @@ public class LogarCadastrarActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                            Log.d("Retorno", response.toString());
                             try {
+                                retorno = response.getString("error");
                                 msgAlerta = response.getString("msg");
                             } catch (JSONException e) {
                                 e.printStackTrace();

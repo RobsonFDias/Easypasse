@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".view.PrincipalActivity"
-            android:label="Login"
+            android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
