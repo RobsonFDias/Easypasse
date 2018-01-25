@@ -2,7 +2,6 @@ package br.com.easypasse.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,12 +18,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import br.com.easypasse.R;
-
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.com.easypasse.R;
 import br.com.easypasse.config.EndPoints;
+import br.com.easypasse.controller.UsuarioControle;
+import br.com.easypasse.dao.DatabaseHelper;
+import br.com.easypasse.dao.DatabaseManager;
+import br.com.easypasse.model.UsuarioModelo;
+import br.com.easypasse.utils.ObjetosTransitantes;
 import br.com.easypasse.utils.Utilitarios;
 
 public class LogarCadastrarActivity extends AppCompatActivity {
@@ -36,6 +40,8 @@ public class LogarCadastrarActivity extends AppCompatActivity {
     private EditText senha;
     private RequestQueue mVolleyRequest;
     private String msgAlerta, retorno;
+    private JSONArray jsonArray;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,10 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_logar_cadastrar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (verificaUsuarioLogado()) {
+            abrirTelaPrincipal();
+        }
 
         mVolleyRequest = Volley.newRequestQueue(this);
 
@@ -55,7 +65,7 @@ public class LogarCadastrarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (validaCampos()) {
-                    new FazerLogin().execute();
+                    fazerLogin();
                 }
             }
         });
@@ -65,44 +75,10 @@ public class LogarCadastrarActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent cadastrarIntent = new Intent(LogarCadastrarActivity.this, CadastroActivity.class);
                 startActivity(cadastrarIntent);
+                finish();
             }
         });
 
-    }
-
-    private class FazerLogin extends AsyncTask<String, String, JSONObject> {
-        private ProgressDialog pDialog;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            pDialog = new ProgressDialog(LogarCadastrarActivity.this);
-            pDialog.setMessage("Fazendo login ......");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(true);
-            pDialog.show();
-
-        }
-
-        @Override
-        protected JSONObject doInBackground(String... args) {
-            fazerLogin();
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(JSONObject json) {
-            pDialog.dismiss();
-            if (retorno.equals("Sucesso")) {
-                Intent principalIntent = new Intent(LogarCadastrarActivity.this, PrincipalActivity.class);
-                startActivity(principalIntent);
-            } else {
-                Toast.makeText(LogarCadastrarActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
-            }
-
-        }
     }
 
     private boolean validaCampos() {
@@ -118,7 +94,20 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         return true;
     }
 
+    private void dialog() {
+        try {
+            pDialog = new ProgressDialog(LogarCadastrarActivity.this);
+            pDialog.setMessage("Enviando dados ......");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private JSONObject fazerLogin() {
+        dialog();
         final JSONObject retornoJson = new JSONObject();
         try {
             final JSONObject dadosJson = new JSONObject();
@@ -137,6 +126,15 @@ public class LogarCadastrarActivity extends AppCompatActivity {
                             try {
                                 retorno = response.getString("error");
                                 msgAlerta = response.getString("msg");
+                                pDialog.dismiss();
+
+                                if (retorno.equals("Sucesso")) {
+                                    jsonArray = new JSONArray(response.getString("usuario"));
+                                    salvarUsuario();
+                                    abrirTelaPrincipal();
+                                } else {
+                                    Toast.makeText(LogarCadastrarActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
+                                }
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -155,6 +153,57 @@ public class LogarCadastrarActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private void salvarUsuario() {
+        try {
+            DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
+            for (Integer i = 0; i <= jsonArray.length() - 1; i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                UsuarioModelo usuarioModelo = new UsuarioModelo();
+                usuarioModelo.setId(jsonObject.getInt("idUsuario"));
+                usuarioModelo.setNome(jsonObject.getString("nome"));
+                usuarioModelo.setLogado(jsonObject.getString("logado"));
+                usuarioModelo.setCpf(jsonObject.getString("cpf"));
+
+                UsuarioModelo usuarioModelo1 = new UsuarioControle().buscarUsuarioId(usuarioModelo.getId());
+                if (usuarioModelo1 == null) {
+                    new UsuarioControle().inserirUsuario(usuarioModelo);
+                } else {
+                    new UsuarioControle().atualizarUsuario(usuarioModelo);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirTelaPrincipal() {
+        try {
+            Intent principalIntent = new Intent(LogarCadastrarActivity.this, PrincipalActivity.class);
+            startActivity(principalIntent);
+            finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Boolean verificaUsuarioLogado() {
+        DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
+
+        UsuarioModelo usuarioModelo = null;
+        try {
+            usuarioModelo = new UsuarioControle().buscarUsuarioLogado();
+            if (usuarioModelo != null) {
+                ObjetosTransitantes.USUARIO_MODELO = usuarioModelo;
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

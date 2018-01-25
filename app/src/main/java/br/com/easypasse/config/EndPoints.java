@@ -7,4 +7,5 @@ public class EndPoints {
 
     public static final String URL_SITE = "http://easypasse.com.br/gestao/";
     public static final String URL_LOGIN = URL_SITE + "wsLogin.php";
+    public static final String URL_CADASTRAR = URL_SITE + "wsCadastrar.php";
 }

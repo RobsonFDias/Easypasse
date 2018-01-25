@@ -1,9 +1,7 @@
-package com.example.gustavo.easypasse.controller;
+package br.com.easypasse.controller;
 
-import com.example.gustavo.easypasse.dao.UsuarioDAO;
-import com.example.gustavo.easypasse.model.UsuarioModelo;
-
-import java.util.List;
+import br.com.easypasse.dao.UsuarioDAO;
+import br.com.easypasse.model.UsuarioModelo;
 
 
 public class UsuarioControle {
@@ -25,6 +23,11 @@ public class UsuarioControle {
 	public UsuarioModelo buscarUsuarioId(int id) throws Exception {
 		 UsuarioModelo modelo = usuarioDAO.pesquisarUsuarioPeloId(id);
 		 return modelo;
+	}
+
+	public UsuarioModelo buscarUsuarioLogado() throws Exception {
+		UsuarioModelo modelo = usuarioDAO.pesquisarUsuarioLogado();
+		return modelo;
 	}
 
 	public void deletarUsuario(Integer usuario)	throws Exception {

@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.model;
+package br.com.easypasse.model;
 
 public class UsuarioModelo {
     private int id;

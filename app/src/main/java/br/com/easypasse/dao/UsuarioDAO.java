@@ -1,10 +1,10 @@
-package com.example.gustavo.easypasse.dao;
+package br.com.easypasse.dao;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.gustavo.easypasse.model.UsuarioModelo;
+import br.com.easypasse.model.UsuarioModelo;
 
 
 /**
@@ -72,6 +72,28 @@ public class UsuarioDAO {
         try {
             bd.beginTransaction();
             Cursor cursor = bd.query(NOME_TABELA, ALL_FIELDS, "ID = ?", new String[]{String.valueOf(id)}, null, null, null);
+            if (cursor != null && cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                usuario = cursorParaUsuario(cursor);
+                cursor.close();
+                bd.setTransactionSuccessful();
+            }
+            return usuario;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            bd.endTransaction();
+            DatabaseManager.getInstance().closeDatabase();
+        }
+    }
+
+    public UsuarioModelo pesquisarUsuarioLogado() {
+        SQLiteDatabase bd = DatabaseManager.getInstance().openDatabase();
+        UsuarioModelo usuario = null;
+        try {
+            bd.beginTransaction();
+            Cursor cursor = bd.query(NOME_TABELA, ALL_FIELDS, "LOGADO = ?", new String[]{String.valueOf("1")}, null, null, null);
             if (cursor != null && cursor.getCount() > 0) {
                 cursor.moveToFirst();
                 usuario = cursorParaUsuario(cursor);

@@ -1,4 +1,4 @@
-package com.example.gustavo.easypasse.dao;
+package br.com.easypasse.dao;
 
 import android.database.sqlite.SQLiteDatabase;
 
