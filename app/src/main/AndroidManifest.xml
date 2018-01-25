@@ -11,64 +11,63 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"/>
 
-            <!--
+        <activity
+            android:name=".view.CarregandoActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
-        <activity
-            android:name=".view.CarregandoActivity"
-            android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
             android:name=".view.PrincipalActivity"
             android:label="@string/title_activity_principal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".view.CadastroActivity"
             android:label="Cadastro"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".view.RecargaActivity"
             android:label="@string/title_activity_recarga"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".view.TranferenciaRecargaActivity"
             android:label="@string/title_activity_tranferencia_recarga"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".view.CartaoCreditoActivity"
             android:label="@string/title_activity_cartao_credito"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".view.BoletoActivity"
             android:label="@string/title_activity_boleto"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".view.CadastroComplementoActivity"
             android:label="@string/title_activity_cadastro_complemento"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".view.LogarCadastrarActivity"
             android:label="@string/title_activity_logar_cadastrar"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".view.TesteActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
