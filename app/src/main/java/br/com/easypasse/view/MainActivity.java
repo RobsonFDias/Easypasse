@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.easypasse.R;
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         linearLayout = (RelativeLayout) findViewById(R.id.menu);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
+
+        ((TextView) findViewById(R.id.txtUsuario)).setText(ObjetosTransitantes.USUARIO_MODELO.getNome());
+        ((TextView) findViewById(R.id.txtIdUsuario)).setText(String.valueOf(ObjetosTransitantes.USUARIO_MODELO.getId()));
 
         iniciar();
 

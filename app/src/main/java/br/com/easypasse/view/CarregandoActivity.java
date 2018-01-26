@@ -17,51 +17,53 @@ public class CarregandoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logar_cadastrar);
+        setContentView(R.layout.activity_carregando);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-iniciaProgress();
+        iniciaProgress();
     }
 
-    private void iniciaProgress(){
-        try{
+    private void iniciaProgress() {
+        try {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    while (contador < 100){
-                        contador+=1;
+                    while (contador < 100) {
+                        contador += 1;
+
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
                                 progressBar.setProgress(contador);
                             }
                         });
-                        if(contador == 99){
+
+                        if (contador == 99) {
                             abrirTelaLogin();
                         }
 
                         try {
-                            Thread.sleep(200);
-                        }catch (InterruptedException i){
+                            Thread.sleep(100);
+                        } catch (InterruptedException i) {
                             i.printStackTrace();
                         }
 
                     }
                 }
             }).start();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void abrirTelaLogin(){
+    private void abrirTelaLogin() {
         try {
-            startActivity(new Intent(CarregandoActivity.this,LogarCadastrarActivity.class));
+            startActivity(new Intent(CarregandoActivity.this, LogarCadastrarActivity.class));
             finish();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

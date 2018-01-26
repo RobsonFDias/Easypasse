@@ -28,6 +28,7 @@ import br.com.easypasse.controller.UsuarioControle;
 import br.com.easypasse.dao.DatabaseHelper;
 import br.com.easypasse.dao.DatabaseManager;
 import br.com.easypasse.model.UsuarioModelo;
+import br.com.easypasse.utils.ObjetosTransitantes;
 import br.com.easypasse.utils.Utilitarios;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -164,6 +165,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                 new UsuarioControle().inserirUsuario(usuarioModelo);
 
+                ObjetosTransitantes.USUARIO_MODELO = usuarioModelo;
             }
         } catch (JSONException e) {
             e.printStackTrace();
