@@ -75,12 +75,12 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
-                        android:indeterminate="false"
-                        android:indeterminateTint="#d60909"
-                        android:progressTint="#d60909"
                         android:layout_margin="25dp"
+                        android:indeterminate="false"
+                        android:indeterminateTint="@color/colorAzul"
                         android:max="100"
-                        android:progress="1" />
+                        android:progress="1"
+                        android:progressTint="@color/colorAzul" />
                 </LinearLayout>
 
             </LinearLayout>
