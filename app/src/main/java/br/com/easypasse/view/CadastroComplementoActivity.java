@@ -56,26 +56,31 @@ public class CadastroComplementoActivity extends AppCompatActivity {
 
     private void getSexo(){
 
-        JSONObject sexoJsonObject = new JSONObject();
+        final JSONObject sexoJsonObject = new JSONObject();
         try {
             sexoJsonObject.put("method", "app-get-genero");
             sexoJsonObject.toString();
 
-            JsonObjectRequest dadoObjReq = new JsonObjectRequest(Request.Method.POST,
-                    EndPoints.URL_GENERO, sexoJsonObject, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    Log.d("json", response.toString());
-                }
-            }, new Response.ErrorListener() {
+            final JsonObjectRequest dadoObjReq = new JsonObjectRequest(Request.Method.POST,
+                    EndPoints.URL_GENERO, sexoJsonObject,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.d("json", response.toString());
+                        }
+                    }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    Log.d("TAG", "ERRO!!: " + error);
                 }
             });
+
+            mVolleyRequest.add(dadoObjReq);
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
     }
 
     private void atualizarUsuario(){
