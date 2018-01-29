@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Projetos\Easypasse\AndroidStudioV3.iml" filepath="C:\Projetos\Easypasse\AndroidStudioV3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Easypasse.iml" filepath="$PROJECT_DIR$/Easypasse.iml" />
-      <module fileurl="file://P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\Easypasse.iml" filepath="P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\Easypasse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EasyPasseV5.iml" filepath="$PROJECT_DIR$/EasyPasseV5.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\app\app.iml" filepath="P:\Projetos\EasyPasse\EasyPasse\Fonte\Java\AndroidStudioV3\app\app.iml" />
     </modules>
   </component>
 </project>
