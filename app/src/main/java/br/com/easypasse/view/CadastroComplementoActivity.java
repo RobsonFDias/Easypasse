@@ -64,6 +64,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
         telefone = (EditText) findViewById(R.id.edtTelefone);
         cidade = (EditText) findViewById(R.id.edtCidade);
         spSexo = (Spinner) findViewById(R.id.spSexo);
+
         spSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -134,7 +135,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
                     EndPoints.URL_GENERO, dadosJsonObject, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    Log.d("json", response.toString());
+                    //Log.d("json", response.toString());
                     try {
                         retorno = response.getString("isThereMore");
 
