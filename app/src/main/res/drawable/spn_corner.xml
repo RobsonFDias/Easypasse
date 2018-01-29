@@ -14,4 +14,11 @@
             android:right="16dp"/>
     </shape>
 </item>
+    <item>
+        <bitmap
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:src="@android:drawable/arrow_down_float" />
+    </item>
 </layer-list>

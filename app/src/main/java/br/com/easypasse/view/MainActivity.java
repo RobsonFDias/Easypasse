@@ -1,6 +1,7 @@
 package br.com.easypasse.view;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,10 +22,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import br.com.easypasse.R;
-
 import java.util.ArrayList;
 
+import br.com.easypasse.R;
 import br.com.easypasse.adapter.NavDrawerListAdapter;
 import br.com.easypasse.utils.ObjetosTransitantes;
 
@@ -178,7 +178,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new PrincipalFragment();
                 break;
             case 1:
-
+                startActivity(new Intent(MainActivity.this, CadastroComplementoActivity.class));
+                finish();
                 break;
             case 2:
 
