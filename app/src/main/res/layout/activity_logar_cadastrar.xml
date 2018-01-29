@@ -66,7 +66,7 @@
                 <EditText
                     android:id="@+id/edtCpf"
                     android:layout_width="300dp"
-                    android:layout_height="80px"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="84dp"
                     android:layout_weight="1"
                     android:background="@drawable/edit_corner"
@@ -84,7 +84,7 @@
                 <EditText
                     android:id="@+id/edtSenha"
                     android:layout_width="300dp"
-                    android:layout_height="80px"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="20dp"

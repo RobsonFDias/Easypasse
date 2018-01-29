@@ -36,32 +36,26 @@
 
         <activity
             android:name=".view.CadastroActivity"
-            android:label="Cadastro"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".view.RecargaActivity"
-            android:label="@string/title_activity_recarga"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
             android:name=".view.TranferenciaRecargaActivity"
-            android:label="@string/title_activity_tranferencia_recarga"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".view.CartaoCreditoActivity"
-            android:label="@string/title_activity_cartao_credito"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".view.BoletoActivity"
-            android:label="@string/title_activity_boleto"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".view.CadastroComplementoActivity"
-            android:label="@string/title_activity_cadastro_complemento"
             android:theme="@style/AppTheme.NoActionBar" >
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
@@ -73,7 +67,6 @@
 
         <activity
             android:name=".view.LogarCadastrarActivity"
-            android:label="@string/title_activity_logar_cadastrar"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
