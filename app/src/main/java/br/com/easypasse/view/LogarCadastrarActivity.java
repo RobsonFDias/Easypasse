@@ -51,7 +51,7 @@ public class LogarCadastrarActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         if (verificaUsuarioLogado()) {
-            //abrirTelaPrincipal();
+            abrirTelaPrincipal();
         }
 
         mVolleyRequest = Volley.newRequestQueue(this);

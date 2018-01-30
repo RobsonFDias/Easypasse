@@ -10,8 +10,8 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        app:srcCompat="@drawable/logo_easypasse_800x244"
-        android:layout_marginRight="15dp"/>
+        android:layout_marginRight="15dp"
+        app:srcCompat="@drawable/logo_easypasse_800x244" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,6 +23,7 @@
             android:id="@+id/txtUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ralewayregular"
             android:text="Robson Florencio Dias"
             android:textColor="@color/white"
             android:textSize="12sp"
@@ -32,6 +33,7 @@
             android:id="@+id/txtIdUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ralewayregular"
             android:text="ID 1234567890"
             android:textColor="@color/white"
             android:textSize="12sp"

@@ -33,7 +33,8 @@
 
         <activity
             android:name=".view.CadastroActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/title_activity_cadastro"/>
 
         <activity
             android:name=".view.RecargaActivity"
@@ -53,14 +54,8 @@
 
         <activity
             android:name=".view.CadastroComplementoActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/title_activity_cadastro_complemento"/>
 
         <activity
             android:name=".view.LogarCadastrarActivity"
