@@ -97,8 +97,6 @@ public class MainActivity extends AppCompatActivity {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuIcons.getResourceId(7, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuIcons.getResourceId(8, -1)));
         navMenuIcons.recycle();
 
 
@@ -178,29 +176,22 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new PrincipalFragment();
                 break;
             case 1:
-                startActivity(new Intent(MainActivity.this, CadastroComplementoActivity.class));
-                finish();
+
                 break;
             case 2:
 
                 break;
             case 3:
-                fragment = new AjudaFragment();
-                break;
+
             case 4:
-
-                break;
-            case 5:
-
-                break;
-            case 6:
-
-                break;
-            case 7:
                 fragment = new CreditosFragment();
                 break;
-            case 8:
+            case 5:
                 fragment = new HistoricoFragment();
+                break;
+            case 6:
+                startActivity(new Intent(MainActivity.this, ConfiguracaoActivity.class));
+                finish();
                 break;
             default:
                 break;

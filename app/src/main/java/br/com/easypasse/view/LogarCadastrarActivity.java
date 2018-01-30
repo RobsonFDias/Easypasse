@@ -173,6 +173,8 @@ public class LogarCadastrarActivity extends AppCompatActivity {
                 } else {
                     new UsuarioControle().atualizarUsuario(usuarioModelo);
                 }
+
+                ObjetosTransitantes.USUARIO_MODELO = usuarioModelo;
             }
         } catch (JSONException e) {
             e.printStackTrace();

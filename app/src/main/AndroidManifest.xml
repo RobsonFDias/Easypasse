@@ -11,55 +11,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".view.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.CarregandoActivity"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.PrincipalActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.CadastroActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_cadastro"/>
-
+            android:label="@string/title_activity_cadastro"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.RecargaActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.TranferenciaRecargaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".view.CartaoCreditoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".view.BoletoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".view.CadastroComplementoActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_cadastro_complemento"/>
-
+            android:label="@string/title_activity_cadastro_complemento"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.LogarCadastrarActivity"
-            android:theme="@style/AppTheme.NoActionBar.Fullscreen"/>
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".view.ConfiguracaoActivity"
+            android:label="@string/title_activity_configuracao"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".view.AjudaActivity"
+            android:label="@string/title_activity_ajuda"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".view.ContaActivity"
+            android:label="@string/title_activity_conta"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
     </application>
 
 </manifest>

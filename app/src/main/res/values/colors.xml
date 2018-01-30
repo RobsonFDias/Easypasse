@@ -10,4 +10,5 @@
     <color name="colorFundoMenu">#1A2127</color>
     <color name="colorClickMenu">#3C4E5C</color>
     <color name="colorAzulClaro">#3598DC</color>
+    <color name="colorLinhaConfiguracao">#293D45</color>
 </resources>

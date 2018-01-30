@@ -95,7 +95,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(CadastroComplementoActivity.this, MainActivity.class));
+        startActivity(new Intent(CadastroComplementoActivity.this, ContaActivity.class));
         finish();
     }
 
@@ -221,8 +221,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
 
                         if (retorno.equals("Sucesso")) {
                             atualizarUsuario();
-                            Intent principalIntent = new Intent(CadastroComplementoActivity.this, PrincipalActivity.class);
-                            startActivity(principalIntent);
+                            onBackPressed();
                             finish();
                         } else {
                             Toast.makeText(CadastroComplementoActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
