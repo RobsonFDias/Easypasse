@@ -124,9 +124,8 @@ public class LogarCadastrarActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
                             try {
-                                String idusuario = response.getString("idUsuario");
-                                Toast.makeText(LogarCadastrarActivity.this, "idusuario "+idusuario, Toast.LENGTH_LONG).show();
-//                                retorno = response.getString("error");
+
+                                retorno = response.getString("error");
                                 msgAlerta = response.getString("msg");
                                 pDialog.dismiss();
 
