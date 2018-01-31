@@ -44,7 +44,7 @@
                 android:src="@drawable/separator" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:layout_marginRight="70dp"
@@ -59,9 +59,9 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/ralewayregular"
                     android:background="@drawable/button_corner_black"
-                    android:text="Faça uma recarga"
+                    android:fontFamily="@font/ralewayregular"
+                    android:text="Fazer recarga"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -80,9 +80,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="9dp"
-                    android:fontFamily="@font/ralewayregular"
                     android:background="@drawable/button_corner_black"
-                    android:text="Transfira uma recarga"
+                    android:fontFamily="@font/ralewayregular"
+                    android:text="Transferir recarga"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
