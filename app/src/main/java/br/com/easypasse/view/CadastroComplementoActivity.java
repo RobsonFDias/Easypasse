@@ -39,10 +39,7 @@ import br.com.easypasse.utils.ObjetosTransitantes;
 
 public class CadastroComplementoActivity extends AppCompatActivity {
 
-    private EditText nome;
-    private EditText email;
-    private EditText telefone;
-    private EditText cidade;
+    private EditText nome, email, telefone, cidade, ddd;
     private ProgressDialog pDialog;
     private String retorno, msgAlerta;
     private RequestQueue mVolleyRequest;
@@ -64,6 +61,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
         telefone = (EditText) findViewById(R.id.edtTelefone);
         cidade = (EditText) findViewById(R.id.edtCidade);
         spSexo = (Spinner) findViewById(R.id.spSexo);
+        ddd = (EditText) findViewById(R.id.edtDDD);
 
         spSexo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -115,6 +113,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
             if (ObjetosTransitantes.USUARIO_MODELO != null) {
                 nome.setText(ObjetosTransitantes.USUARIO_MODELO.getNome());
                 telefone.setText(ObjetosTransitantes.USUARIO_MODELO.getTelefone());
+                ddd.setText(ObjetosTransitantes.USUARIO_MODELO.getDdd());
                 email.setText(ObjetosTransitantes.USUARIO_MODELO.getEmail());
                 cidade.setText(ObjetosTransitantes.USUARIO_MODELO.getCidade());
                 spnGenero = ObjetosTransitantes.USUARIO_MODELO.getSexo();
@@ -201,9 +200,10 @@ public class CadastroComplementoActivity extends AppCompatActivity {
             dadosJsonObject.put("idUsuario", ObjetosTransitantes.USUARIO_MODELO.getId());
             dadosJsonObject.put("nome", nome.getText().toString());
             dadosJsonObject.put("email", email.getText().toString());
+            dadosJsonObject.put("ddd", ddd.getText().toString());
             dadosJsonObject.put("telefone", telefone.getText().toString());
             dadosJsonObject.put("cidade", cidade.getText().toString());
-            dadosJsonObject.put("genero", Integer.valueOf(idGenero[0].trim()));
+            dadosJsonObject.put("idGenero", Integer.valueOf(idGenero[0].trim()));
             dadosJsonObject.put("cpf", ObjetosTransitantes.USUARIO_MODELO.getCpf().toString());
             dadosJsonObject.put("method", "app-set-usuario");
             dadosJsonObject.toString();
@@ -250,11 +250,19 @@ public class CadastroComplementoActivity extends AppCompatActivity {
             nome.setFocusable(true);
             return false;
         }
+
         if (email.getText().toString().equals("")) {
             Toast.makeText(CadastroComplementoActivity.this, "Campo e-mail vazio", Toast.LENGTH_LONG).show();
             email.setFocusable(true);
             return false;
         }
+
+        if (ddd.getText().toString().equals("")) {
+            Toast.makeText(CadastroComplementoActivity.this, "Campo ddd vazio", Toast.LENGTH_LONG).show();
+            ddd.setFocusable(true);
+            return false;
+        }
+
         if (telefone.getText().toString().equals("")) {
             Toast.makeText(CadastroComplementoActivity.this, "Campo telefone vazio", Toast.LENGTH_LONG).show();
             telefone.setFocusable(true);
@@ -279,6 +287,7 @@ public class CadastroComplementoActivity extends AppCompatActivity {
             usuarioModelo.setNome(nome.getText().toString());
             usuarioModelo.setEmail(email.getText().toString());
             usuarioModelo.setTelefone(telefone.getText().toString());
+            usuarioModelo.setDdd(ddd.getText().toString());
             usuarioModelo.setSexo(spnGenero);
             usuarioModelo.setCidade(cidade.getText().toString());
             usuarioModelo.setLogado(ObjetosTransitantes.USUARIO_MODELO.getLogado());

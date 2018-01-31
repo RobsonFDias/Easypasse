@@ -148,17 +148,25 @@ public class CadastroActivity extends AppCompatActivity {
 
     private boolean validaCampos() {
         if (usuario.getText().toString().equals("")) {
-            Toast.makeText(CadastroActivity.this, "Campo Usuario vazio", Toast.LENGTH_LONG).show();
+            Toast.makeText(CadastroActivity.this, "Campo Usuario vazio!", Toast.LENGTH_LONG).show();
             usuario.setFocusable(true);
             return false;
         }
+
         if (cpf.getText().toString().equals("")) {
-            Toast.makeText(CadastroActivity.this, "Campo CPF vazio", Toast.LENGTH_LONG).show();
+            Toast.makeText(CadastroActivity.this, "Campo CPF vazio!", Toast.LENGTH_LONG).show();
             cpf.setFocusable(true);
             return false;
         }
+
         if (senha.getText().toString().equals("")) {
-            Toast.makeText(CadastroActivity.this, "Campo Senha vazio", Toast.LENGTH_LONG).show();
+            Toast.makeText(CadastroActivity.this, "Campo Senha vazio!", Toast.LENGTH_LONG).show();
+            senha.setFocusable(true);
+            return false;
+        }
+
+        if (senha.getText().toString().length() < 4) {
+            Toast.makeText(CadastroActivity.this, "Sua senha deve ter no minimo 4 caracteres!", Toast.LENGTH_LONG).show();
             senha.setFocusable(true);
             return false;
         }

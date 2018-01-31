@@ -7,6 +7,7 @@ public class UsuarioModelo {
     private String email;
     private String senha;
     private String cidade;
+    private String ddd;
     private String telefone;
     private String sexo;
     private String logado;
@@ -57,6 +58,14 @@ public class UsuarioModelo {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public String getDdd() {
+        return ddd;
+    }
+
+    public void setDdd(String ddd) {
+        this.ddd = ddd;
     }
 
     public String getTelefone() {

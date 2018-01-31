@@ -13,7 +13,7 @@ import br.com.easypasse.model.UsuarioModelo;
 public class UsuarioDAO {
     public static final String NOME_TABELA = "USUARIO";
 
-    private static final String[] ALL_FIELDS = new String[]{"ID", "CPF", "NOME", "EMAIL", "SENHA", "TELEFONE", "CIDADE", "SEXO", "LOGADO"};
+    private static final String[] ALL_FIELDS = new String[]{"ID", "CPF", "NOME", "EMAIL", "SENHA", "CIDADE", "DDD", "TELEFONE", "SEXO", "LOGADO"};
 
     public UsuarioDAO() {
     }
@@ -29,6 +29,7 @@ public class UsuarioDAO {
             values.put("EMAIL", usuario.getEmail());
             values.put("SENHA", usuario.getSenha());
             values.put("CIDADE", usuario.getCidade());
+            values.put("DDD", usuario.getDdd());
             values.put("TELEFONE", usuario.getTelefone());
             values.put("SEXO", usuario.getSexo());
             values.put("LOGADO", usuario.getLogado());
@@ -53,6 +54,7 @@ public class UsuarioDAO {
             values.put("EMAIL", usuario.getEmail());
             values.put("SENHA", usuario.getSenha());
             values.put("CIDADE", usuario.getCidade());
+            values.put("DDD", usuario.getDdd());
             values.put("TELEFONE", usuario.getTelefone());
             values.put("SEXO", usuario.getSexo());
             values.put("LOGADO", usuario.getLogado());
@@ -132,9 +134,10 @@ public class UsuarioDAO {
         usuario.setEmail(cursor.getString(3));
         usuario.setSenha(cursor.getString(4));
         usuario.setCidade(cursor.getString(5));
-        usuario.setTelefone(cursor.getString(6));
-        usuario.setSexo(cursor.getString(7));
-        usuario.setLogado(cursor.getString(8));
+        usuario.setDdd(cursor.getString(6));
+        usuario.setTelefone(cursor.getString(7));
+        usuario.setSexo(cursor.getString(8));
+        usuario.setLogado(cursor.getString(9));
         return usuario;
     }
 }
