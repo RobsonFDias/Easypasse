@@ -63,21 +63,27 @@
                         app:srcCompat="@drawable/aviso_aproximar_para_a_catraca_01" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvMensagem"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/ralewayregular"
-                    android:text="APROXIME O CELULAR A CATRACA"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/holo_green_dark"
-                    android:textSize="24sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-                    tools:ignore="MissingConstraints" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvMensagem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/ralewayregular"
+                        android:text="APROXIME O CELULAR A CATRACA"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="24sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/btnPainelAcesso"
@@ -92,139 +98,199 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvMensagem" />
 
-                <TextView
-                    android:id="@+id/tvSaldoDisponivel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:text="Saldo disponível"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/darker_gray"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnPainelAcesso" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tvSaldoGasto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="35dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="35dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:text="Saldo gasto"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/darker_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.931"
-                    app:layout_constraintStart_toEndOf="@+id/tvSaldoDisponivel"
-                    app:layout_constraintTop_toBottomOf="@+id/btnPainelAcesso" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tvValorSaldoDisponivel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="R$ 850,00"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/tvValorSaldoGasto"
-                    app:layout_constraintHorizontal_bias="0.101"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvSaldoDisponivel" />
+                        <TextView
+                            android:id="@+id/tvSaldoDisponivel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="48dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="1"
+                            android:text="Saldo disponível"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/darker_gray"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/btnPainelAcesso"
+                            tools:ignore="NotSibling" />
 
-                <TextView
-                    android:id="@+id/tvValorSaldoGasto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="60dp"
-                    android:layout_marginRight="60dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="R$ 125,00"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvSaldoGasto" />
+                        <TextView
+                            android:id="@+id/tvSaldoGasto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="75dp"
+                            android:layout_marginRight="75dp"
+                            android:layout_weight="1"
+                            android:text="Saldo gasto"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/darker_gray"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.931"
+                            app:layout_constraintStart_toEndOf="@+id/tvSaldoDisponivel"
+                            app:layout_constraintTop_toBottomOf="@+id/btnPainelAcesso"
+                            tools:ignore="NotSibling" />
+                    </RelativeLayout>
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvDataRenovarRecarga"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="Data renovar recarga"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/darker_gray"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvValorSaldoDisponivel" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tvTransferenciaDeSaldo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="Transferência de saldo"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/darker_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvValorSaldoGasto" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tvDataRenovaRecarga"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="18/10/2017"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDataRenovarRecarga"
-                    app:layout_constraintVertical_bias="0.045" />
+                        <TextView
+                            android:id="@+id/tvValorSaldoGasto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginLeft="47dp"
+                            android:layout_marginStart="47dp"
+                            android:layout_weight="1"
+                            android:text="R$ 125,00"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSaldoGasto"
+                            tools:ignore="NotSibling" />
 
-                <TextView
-                    android:id="@+id/tvValorTransSaldo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="64dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="64dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:text="-R$ 25,00"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/tvDataRenovaRecarga"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTransferenciaDeSaldo"
-                    app:layout_constraintVertical_bias="0.045" />
+                        <TextView
+                            android:id="@+id/tvValorSaldoDisponivel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="69dp"
+                            android:layout_marginRight="69dp"
+                            android:layout_weight="1"
+                            android:text="R$ 850,00"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toStartOf="@+id/tvValorSaldoGasto"
+                            app:layout_constraintHorizontal_bias="0.101"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSaldoDisponivel"
+                            tools:ignore="NotSibling" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvDataRenovarRecarga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:text="Data renovar recarga"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/darker_gray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvValorSaldoDisponivel"
+                        tools:ignore="NotSibling" />
+
+                        <TextView
+                            android:id="@+id/tvTransferenciaDeSaldo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="31dp"
+                            android:layout_marginRight="31dp"
+                            android:layout_weight="1"
+                            android:text="Transferência de saldo"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/darker_gray"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvValorSaldoGasto"
+                            tools:ignore="NotSibling" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tvDataRenovaRecarga"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="48dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="18/10/2017"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvDataRenovarRecarga"
+                            app:layout_constraintVertical_bias="0.045"
+                            tools:ignore="NotSibling" />
+
+                        <TextView
+                            android:id="@+id/tvValorTransSaldo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/tvDataRenovaRecarga"
+                            android:layout_alignBottom="@+id/tvDataRenovaRecarga"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="74dp"
+                            android:layout_marginRight="74dp"
+                            android:layout_weight="1"
+                            android:text="-R$ 25,00"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/tvDataRenovaRecarga"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTransferenciaDeSaldo"
+                            app:layout_constraintVertical_bias="0.045"
+                            tools:ignore="NotSibling" />
+                    </RelativeLayout>
+
+                </LinearLayout>
 
 
             </LinearLayout>
