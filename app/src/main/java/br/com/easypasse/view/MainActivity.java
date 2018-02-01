@@ -182,7 +182,8 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case 3:
-
+                fragment = new BloqueioFragment();
+                break;
             case 4:
                 fragment = new CreditosFragment();
                 break;

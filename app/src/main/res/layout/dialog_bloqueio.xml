@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/border_linear_layout"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtDenunciar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:text="Bloqueio de Conta."
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="16pt" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:text="Se vc estiver certza que deseja bloquear sua conta, digite CPF e senha de login."
+                    android:textColor="@color/black_semi_transparent"
+                    android:textSize="8pt" />
+
+                <EditText
+                    android:id="@+id/edtCpf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:hint="CPF"
+                    android:padding="10dp"
+                    android:textColorHint="@color/black_semi_transparent"
+                    android:textSize="15pt" />
+
+                <EditText
+                    android:id="@+id/edtSenha"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:hint="Senha"
+                    android:padding="10dp"
+                    android:textColorHint="@color/black_semi_transparent"
+                    android:textSize="15pt" />
+
+                <Button
+                    android:id="@+id/btnBloquear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border_botao"
+                    android:text="BLOQUEAR CONTA"
+                    android:textColor="@color/colorBranco" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_oval"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_perigo" />
+    </LinearLayout>
+
+</RelativeLayout>
