@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database) {
         try {
             database.execSQL(Tabelas.CRIAR_USUARIO);
+            database.execSQL(Tabelas.CRIAR_FORMA_PAGAMENTO);
             Log.w(DatabaseHelper.class.getName(), "TABELAS CRIADAS COM SUCESSO");
         } catch (Exception e) {
             Log.w(DatabaseHelper.class.getName(), e.getMessage());

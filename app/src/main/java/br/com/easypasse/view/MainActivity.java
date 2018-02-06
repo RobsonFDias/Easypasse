@@ -26,6 +26,10 @@ import java.util.ArrayList;
 
 import br.com.easypasse.R;
 import br.com.easypasse.adapter.NavDrawerListAdapter;
+import br.com.easypasse.controller.FormaPagamentoControle;
+import br.com.easypasse.dao.DatabaseHelper;
+import br.com.easypasse.dao.DatabaseManager;
+import br.com.easypasse.model.FormaPagamentoModelo;
 import br.com.easypasse.utils.ObjetosTransitantes;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout linearLayout;
     public static FragmentManager fragmentManager;
     private Bundle savedInstanceStates;
-    private String quantNotification = "0";
     private Boolean exit = false, voltar = true;
 
     @Override
@@ -51,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-
         ObjetosTransitantes.MAIN_ACTIVITY = this;
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -96,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuIcons.getResourceId(6, -1)));
         navMenuIcons.recycle();
 
 
@@ -182,15 +183,17 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case 3:
-                fragment = new BloqueioFragment();
+                if (buscarFormaPagamento()) {
+                    fragment = new CreditosFragment();
+                } else {
+                    startActivity(new Intent(MainActivity.this, FormaPagamentoActivity.class));
+                    finish();
+                }
                 break;
             case 4:
-                fragment = new CreditosFragment();
-                break;
-            case 5:
                 fragment = new HistoricoFragment();
                 break;
-            case 6:
+            case 5:
                 startActivity(new Intent(MainActivity.this, ConfiguracaoActivity.class));
                 finish();
                 break;
@@ -218,4 +221,21 @@ public class MainActivity extends AppCompatActivity {
             setTitle("");
         }
     }
+
+    private Boolean buscarFormaPagamento() {
+        FormaPagamentoModelo formaPagamentoModelo = null;
+        try {
+            DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
+
+            formaPagamentoModelo = new FormaPagamentoControle().buscarFormaPagamentoId(1);
+            if (formaPagamentoModelo == null) {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
 }

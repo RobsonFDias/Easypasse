@@ -10,4 +10,5 @@ public class EndPoints {
     public static final String URL_CADASTRAR = URL_SITE + "wsCadastrar.php";
     public static final String URL_GENERO = URL_SITE + "wsGenero.php";
     public static final String URL_BLOQUEIO_CONTA = URL_SITE + "wsBloqueio.php";
+    public static final String URL_FORMA_PAGAMENTO = URL_SITE + "wsFormaPagamento.php";
 }

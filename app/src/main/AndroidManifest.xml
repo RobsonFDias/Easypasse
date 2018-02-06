@@ -62,6 +62,9 @@
             android:name=".view.ContaActivity"
             android:label="@string/title_activity_conta"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
+        <activity android:name=".view.FormaPagamentoActivity"
+            android:label="@string/title_activity_cadastro_forma_pagamento"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
     </application>
 
 </manifest>
