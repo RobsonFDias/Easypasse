@@ -19,9 +19,9 @@
                 android:id="@+id/txtSaldo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/ralewayregular"
                 android:gravity="center"
                 android:text="Saldo"
-                android:fontFamily="@font/ralewayregular"
                 android:textColor="@color/colorAzulClaro"
                 android:textSize="14sp" />
 
@@ -29,9 +29,9 @@
                 android:id="@+id/txtSaldoUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/ralewayregular"
                 android:gravity="center"
                 android:text="R$ 1000,00"
-                android:fontFamily="@font/ralewayregular"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -44,10 +44,10 @@
                 android:src="@drawable/separator" />
 
             <LinearLayout
-                android:layout_width="242dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_corner_black">
 
@@ -56,9 +56,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
+                    android:gravity="center"
                     android:background="@drawable/button_corner_black"
                     android:fontFamily="@font/ralewayregular"
                     android:text="Fazer recarga"
@@ -68,10 +67,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="72dp"
-                android:layout_marginRight="72dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_corner_black">
 
@@ -79,9 +78,11 @@
                     android:id="@+id/btnTransferirRecarga"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="9dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/button_corner_black"
                     android:fontFamily="@font/ralewayregular"
+                    android:gravity="center"
                     android:text="Transferir recarga"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -89,10 +90,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="72dp"
-                android:layout_marginRight="72dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_corner_black">
 
@@ -101,11 +102,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    android:fontFamily="@font/ralewayregular"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_corner_black"
+                    android:fontFamily="@font/ralewayregular"
+                    android:gravity="center"
                     android:text="Pagar Passagem"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -146,8 +146,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:gravity="center"
                         android:fontFamily="@font/ralewayregular"
+                        android:gravity="center"
                         android:text="R$ 0,00"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
@@ -164,8 +164,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:gravity="center"
                         android:fontFamily="@font/ralewayregular"
+                        android:gravity="center"
                         android:text="Saldo Gasto"
                         android:textColor="@color/white" />
 
@@ -173,8 +173,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:gravity="center"
                         android:fontFamily="@font/ralewayregular"
+                        android:gravity="center"
                         android:text="R$ 0,00"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
@@ -199,9 +199,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/ralewayregular"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="20dp"
+                        android:fontFamily="@font/ralewayregular"
                         android:gravity="center"
                         android:text="Ultima Recarga"
                         android:textColor="@color/white" />
@@ -210,8 +210,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:gravity="center"
                         android:fontFamily="@font/ralewayregular"
+                        android:gravity="center"
                         android:text="15/01/2017"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
@@ -227,8 +227,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:gravity="center"
                         android:fontFamily="@font/ralewayregular"
+                        android:gravity="center"
                         android:text="Transferencia de Saldo"
                         android:textColor="@color/white" />
 
@@ -236,8 +236,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:gravity="center"
                         android:fontFamily="@font/ralewayregular"
+                        android:gravity="center"
                         android:text="R$ 0,00"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
