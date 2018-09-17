@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".view.LocalizarOnibusActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/sombra_canto_redondo"
+            android:elevation="7dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/ralewayregular"
+                android:layout_marginBottom="3dp"
+                android:text="buscar" />
+
+            <EditText
+                android:id="@+id/etLinha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/btnBuscar"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/ralewayregular"
+                android:hint=" Cod. Linha"
+                android:inputType="text"
+                android:textColorHint="@color/black_semi_transparent" />
+
+        </RelativeLayout>
+    </fragment>
+</LinearLayout>

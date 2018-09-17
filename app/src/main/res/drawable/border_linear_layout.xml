@@ -3,18 +3,18 @@
 
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/colorBranco" /><!-- Cor Borda -->
+            <solid android:color="@color/colorAccent" /><!-- Cor Borda -->
             <corners android:radius="10dp" />
         </shape>
     </item>
 
     <item
-        android:bottom="10dp"
-        android:left="10dp"
-        android:right="10dp"
-        android:top="10dp">
+        android:bottom="15dp"
+        android:left="15dp"
+        android:right="15dp"
+        android:top="15dp">
         <shape android:shape="rectangle">
-            <solid android:color="@color/colorBranco" /><!-- Cor Fundo -->
+            <solid android:color="@color/colorAccent" /><!-- Cor Fundo -->
             <corners android:radius="10dp" />
         </shape>
     </item>

@@ -27,4 +27,14 @@
         <item name="android:background">#b3ffffff</item>
     </style>
 
+    <style name="DialogThemeRigth">
+        <item name="android:windowEnterAnimation">@anim/slide_rigth</item>
+        <item name="android:windowExitAnimation">@anim/slide_left</item>
+    </style>
+
+    <style name="DialogThemeLeft">
+        <item name="android:windowEnterAnimation">@anim/slide_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_rigth</item>
+    </style>
+
 </resources>

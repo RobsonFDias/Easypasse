@@ -160,14 +160,23 @@ public class CadastroComplementoActivity extends AppCompatActivity {
     }
 
     private void preecnherGenero(JSONArray jsonArray) {
+        String[] spn = null;
         try {
             List<CharSequence> listGenero = new ArrayList<CharSequence>();
             if (spnGenero != null) {
                 listGenero.add(spnGenero);
+                spn = new String[0];
+                spn = spnGenero.split("-");
             }
             for (Integer i = 0; i <= jsonArray.length() - 1; i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                listGenero.add(jsonObject.getString("idGenero") + "-" + jsonObject.getString("descricao"));
+                if (spn != null) {
+                    if (!spn[0].trim().toString().equals(jsonObject.getString("idGenero"))) {
+                        listGenero.add(jsonObject.getString("idGenero") + "-" + jsonObject.getString("descricao"));
+                    }
+                } else {
+                    listGenero.add(jsonObject.getString("idGenero") + "-" + jsonObject.getString("descricao"));
+                }
             }
             ArrayAdapter adapterGenero = new ArrayAdapter(this, android.R.layout.simple_spinner_item, listGenero);
             adapterGenero.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -8,7 +8,7 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "EASYPASSE";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 1;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             database.execSQL(Tabelas.CRIAR_USUARIO);
             database.execSQL(Tabelas.CRIAR_FORMA_PAGAMENTO);
+            database.execSQL(Tabelas.CRIAR_CARTAO_PAGAMENTO);
             Log.w(DatabaseHelper.class.getName(), "TABELAS CRIADAS COM SUCESSO");
         } catch (Exception e) {
             Log.w(DatabaseHelper.class.getName(), e.getMessage());
@@ -29,6 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
         try {
             database.execSQL(Tabelas.DELETAR_USUARIO);
+            database.execSQL(Tabelas.DELETAR_FORMA_PAGAMENTO);
+            database.execSQL(Tabelas.DELETAR_CARTAO_PAGAMENTO);
             Log.w(DatabaseHelper.class.getName(), "TABELAS DELETADAS COM SUCESSO");
             onCreate(database);
 

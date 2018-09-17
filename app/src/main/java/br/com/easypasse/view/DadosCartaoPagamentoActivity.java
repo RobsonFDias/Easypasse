@@ -44,7 +44,7 @@ import br.com.easypasse.model.FormaPagamentoModelo;
 import br.com.easypasse.utils.ObjetosTransitantes;
 import br.com.jansenfelipe.androidmask.MaskEditTextChangedListener;
 
-public class FormaPagamentoActivity extends AppCompatActivity {
+public class DadosCartaoPagamentoActivity extends AppCompatActivity {
 
 
     private ProgressDialog pDialog;
@@ -60,17 +60,13 @@ public class FormaPagamentoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forma_pagamento);
+        setContentView(R.layout.activity_dados_pagamento);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mVolleyRequest = Volley.newRequestQueue(this);
-
-        if (null != getIntent()) {
-            voltar = getIntent().getStringExtra("voltar");
-        }
 
         edtCodigoSeguranca = (EditText) findViewById(R.id.edtCodigoSeguranca);
         edtNomeTitular = (EditText) findViewById(R.id.edtNomeTitular);
@@ -92,7 +88,7 @@ public class FormaPagamentoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (validaCampos()) {
-                    enviarDadosFormaPagamento();
+
                 }
             }
         });
@@ -106,11 +102,6 @@ public class FormaPagamentoActivity extends AppCompatActivity {
                     llCartao.setVisibility(View.VISIBLE);
                     llBoleto.setVisibility(View.GONE);
                     llBanco.setVisibility(View.GONE);
-                    btnSalvar.setVisibility(View.VISIBLE);
-                } else if (spnFormaPagamento.equals("BOLETO")) {
-                    showAviso();
-                    llCartao.setVisibility(View.GONE);
-                    llBoleto.setVisibility(View.VISIBLE);
                     btnSalvar.setVisibility(View.VISIBLE);
                 } else if (spnFormaPagamento.equals("CARTÃO DE DÉBITO")) {
                     llCartao.setVisibility(View.VISIBLE);
@@ -165,11 +156,7 @@ public class FormaPagamentoActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (voltar != null) {
-            startActivity(new Intent(FormaPagamentoActivity.this, ContaActivity.class));
-        } else {
-            startActivity(new Intent(FormaPagamentoActivity.this, MainActivity.class));
-        }
+        startActivity(new Intent(DadosCartaoPagamentoActivity.this, MainActivity.class));
         finish();
     }
 
@@ -349,74 +336,48 @@ public class FormaPagamentoActivity extends AppCompatActivity {
         }
     }
 
-    protected void showAviso() {
-        LayoutInflater layoutInflater = LayoutInflater.from(FormaPagamentoActivity.this);
-        View promptView = layoutInflater.inflate(R.layout.dialog_aviso, null);
-
-        TextView txtTituloAviso = (TextView) promptView.findViewById(R.id.txtTituloAviso);
-        txtTituloAviso.setText("Aviso");
-        TextView txtMsgAviso = (TextView) promptView.findViewById(R.id.txtMsgAviso);
-        txtMsgAviso.setText("Preencha o campo quantidade com valor minimo de R$ 30,00!");
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FormaPagamentoActivity.this);
-        alertDialogBuilder.setView(promptView);
-        alertDialogBuilder.setCancelable(true);
-
-        alert = alertDialogBuilder.create();
-        alert.show();
-
-
-        Button addUsuario = (Button) promptView.findViewById(R.id.btnEstouCiente);
-        addUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alert.dismiss();
-            }
-        });
-    }
-
     private boolean validaCampos() {
 
         if (spnBandeiraCartao.toString().equals("Selecione")) {
-            Toast.makeText(FormaPagamentoActivity.this, "Selecione uma opção!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DadosCartaoPagamentoActivity.this, "Selecione uma opção!", Toast.LENGTH_LONG).show();
             spBandeiraCartao.setFocusable(true);
             return false;
         }
 
         if (spnFormaPagamento.equals("CARTÃO DE DÉBITO")) {
             if (spnBancos.toString().equals("Selecione")) {
-                Toast.makeText(FormaPagamentoActivity.this, "Selecione uma opção!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DadosCartaoPagamentoActivity.this, "Selecione uma opção!", Toast.LENGTH_LONG).show();
                 spBancos.setFocusable(true);
                 return false;
             }
         }
 
         if (edtDataValidade.getText().toString().equals("")) {
-            Toast.makeText(FormaPagamentoActivity.this, "Campo data validade vazio!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DadosCartaoPagamentoActivity.this, "Campo data validade vazio!", Toast.LENGTH_LONG).show();
             edtDataValidade.setFocusable(true);
             return false;
         }
 
         if (edtNumeroCartao.getText().toString().equals("")) {
-            Toast.makeText(FormaPagamentoActivity.this, "Campo Número cartão vazio!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DadosCartaoPagamentoActivity.this, "Campo Número cartão vazio!", Toast.LENGTH_LONG).show();
             edtNumeroCartao.setFocusable(true);
             return false;
         }
 
         if (edtCodigoSeguranca.getText().toString().equals("")) {
-            Toast.makeText(FormaPagamentoActivity.this, "Campo Código Segurança vazio!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DadosCartaoPagamentoActivity.this, "Campo Código Segurança vazio!", Toast.LENGTH_LONG).show();
             edtCodigoSeguranca.setFocusable(true);
             return false;
         }
 
         if (edtNomeTitular.getText().toString().equals("")) {
-            Toast.makeText(FormaPagamentoActivity.this, "Campo Nome vazio!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DadosCartaoPagamentoActivity.this, "Campo Nome vazio!", Toast.LENGTH_LONG).show();
             edtNomeTitular.setFocusable(true);
             return false;
         }
 
         if (edtCpfTitular.getText().toString().equals("")) {
-            Toast.makeText(FormaPagamentoActivity.this, "Campo cpf vazio!", Toast.LENGTH_LONG).show();
+            Toast.makeText(DadosCartaoPagamentoActivity.this, "Campo cpf vazio!", Toast.LENGTH_LONG).show();
             edtCpfTitular.setFocusable(true);
             return false;
         }
@@ -426,7 +387,7 @@ public class FormaPagamentoActivity extends AppCompatActivity {
 
     private void dialog() {
         try {
-            pDialog = new ProgressDialog(FormaPagamentoActivity.this);
+            pDialog = new ProgressDialog(DadosCartaoPagamentoActivity.this);
             pDialog.setMessage("Enviando dados ......");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -436,77 +397,8 @@ public class FormaPagamentoActivity extends AppCompatActivity {
         }
     }
 
-    private void enviarDadosFormaPagamento() {
-        Integer idFormaPagamento = 0;
-        dialog();
-
-        JSONObject dadosJsonObject = new JSONObject();
-        try {
-
-            for (Integer i = 0; i <= jsonFormaPagamento.length() - 1; i++) {
-                JSONObject jsonObject = jsonFormaPagamento.getJSONObject(i);
-                if (spnFormaPagamento.equals(jsonObject.getString("descricao"))) {
-                    idFormaPagamento = Integer.valueOf(jsonObject.getString("idFormaPagamento"));
-                }
-            }
-
-            dadosJsonObject.put("idUsuario", ObjetosTransitantes.USUARIO_MODELO.getId());
-            dadosJsonObject.put("idFormaPagamento", idFormaPagamento);
-            dadosJsonObject.put("method", "app-set-usuarioformapagamento");
-            dadosJsonObject.toString();
-
-            final Integer finalIdFormaPagamento = idFormaPagamento;
-            JsonObjectRequest dadosObjReq = new JsonObjectRequest(Request.Method.POST,
-                    EndPoints.URL_CADASTRAR, dadosJsonObject, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    Log.d("json", response.toString());
-                    try {
-                        retorno = response.getString("error");
-                        msgAlerta = response.getString("msg");
-
-                        if (retorno.equals("Sucesso")) {
-                            salvarFormaPagamento(finalIdFormaPagamento);
-                            enviarDadosCartao();
-                        } else {
-                            pDialog.dismiss();
-                            Toast.makeText(FormaPagamentoActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.d("Erro ", error.toString());
-                }
-            });
-
-            mVolleyRequest.add(dadosObjReq);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void salvarFormaPagamento(Integer idFormaPagamento) {
-        try {
-            DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
-
-            FormaPagamentoModelo formaPagamentoModelo = new FormaPagamentoModelo();
-            formaPagamentoModelo.setId(idFormaPagamento);
-            formaPagamentoModelo.setDescricao(spnFormaPagamento);
-            formaPagamentoModelo.setAtivo(spnFormaPagamento);
-            formaPagamentoModelo.setUsuario(ObjetosTransitantes.USUARIO_MODELO.getId());
-
-            new FormaPagamentoControle().inserirFormaPagamento(formaPagamentoModelo);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     private void enviarDadosCartao() {
+        dialog();
         JSONObject dadosJsonObject = new JSONObject();
         try {
             String[] idBandeira = spnBandeiraCartao.split("-");
@@ -542,7 +434,7 @@ public class FormaPagamentoActivity extends AppCompatActivity {
                             salvarCartao(new JSONArray(response.getString("cartaopagamento")));
 
                         } else {
-                            Toast.makeText(FormaPagamentoActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
+                            Toast.makeText(DadosCartaoPagamentoActivity.this, msgAlerta, Toast.LENGTH_LONG).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

@@ -161,6 +161,7 @@ public class LogarCadastrarActivity extends AppCompatActivity {
             DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
             for (Integer i = 0; i <= jsonArray.length() - 1; i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+
                 UsuarioModelo usuarioModelo = new UsuarioModelo();
                 usuarioModelo.setId(jsonObject.getInt("idUsuario"));
                 usuarioModelo.setNome(jsonObject.getString("nome"));

@@ -1,5 +1,6 @@
 <resources>
 
+    <string name="google_maps_key">AIzaSyB-JaLELITBpm6ba-sNH_5xjPG9yqb2Sy8</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_recarga">Recarga</string>
@@ -22,7 +23,6 @@
         <item>Tela Inicial</item>
         <item>Localizar Onibus</item>
         <item>Indicar</item>
-        <item>Créditos</item>
         <item>Histórico</item>
         <item>Configurações</item>
     </string-array>
@@ -31,10 +31,41 @@
         <item>@drawable/ic_tela_inicial</item>
         <item>@drawable/ic_localizar_onibus</item>
         <item>@drawable/ic_menu_indicar</item>
-        <item>@drawable/ic_menu_creditos</item>
         <item>@drawable/ic_menu_historico</item>
         <item>@drawable/ic_menu_configuracoes</item>
     </array>
+
+    <string-array name="meses">
+        <item>SELECIONE</item>
+        <item>JANEIRO</item>
+        <item>FEVEREIRO</item>
+        <item>MARÇO</item>
+        <item>ABRIL</item>
+        <item>MAIO</item>
+        <item>JUNHO</item>
+        <item>JULHO</item>
+        <item>AGOSTO</item>
+        <item>SETEMBRO</item>
+        <item>OUTUBRO</item>
+        <item>NOVEMBRO</item>
+        <item>DEZEMBRO</item>
+    </string-array>
+
+    <string-array name="ano">
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
+        <item>2030</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="app_name">EasyPasse</string>
@@ -55,4 +86,6 @@
     <string name="title_activity_ajuda">Ajuda</string>
     <string name="title_activity_conta">Conta</string>
     <string name="title_activity_cadastro_forma_pagamento">Cadastro Forma Pagamento</string>
+    <string name="title_activity_dados_forma_pagamento">Dados Cartão</string>
+
 </resources>

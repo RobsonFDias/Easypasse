@@ -335,7 +335,7 @@
                     android:layout_margin="16dp"
                     android:background="@drawable/button_corner_black"
                     android:fontFamily="@font/ralewayregular"
-                    android:text="SALVAR"
+                    android:text="PAGAR"
                     android:textColor="@android:color/holo_blue_dark"
                     android:visibility="gone" />
 

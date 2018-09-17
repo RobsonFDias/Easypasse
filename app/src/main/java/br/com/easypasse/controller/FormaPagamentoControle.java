@@ -16,12 +16,12 @@ public class FormaPagamentoControle {
         formaPagamentoDAO.insert(formaPagamentoModelo);
     }
 
-    public void atualizarFormaPagamento(FormaPagamentoModelo formaPagamentoModelo) throws Exception {
-        formaPagamentoDAO.update(formaPagamentoModelo);
+    public void deletarFormaPagamento(Integer usuario) throws Exception {
+        formaPagamentoDAO.deletarFormaPagamento(usuario);
     }
 
-    public FormaPagamentoModelo buscarFormaPagamentoId(int id) throws Exception {
-        FormaPagamentoModelo modelo = formaPagamentoDAO.pesquisarFormaPagamentoPeloId(id);
+    public FormaPagamentoModelo buscarFormaPagamentoPeloUsuario(int usuario) throws Exception {
+        FormaPagamentoModelo modelo = formaPagamentoDAO.pesquisarFormaPagamentoPeloUsuario(usuario);
         return modelo;
     }
 }

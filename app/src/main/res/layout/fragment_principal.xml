@@ -60,7 +60,7 @@
                     android:gravity="center"
                     android:background="@drawable/button_corner_black"
                     android:fontFamily="@font/ralewayregular"
-                    android:text="Fazer recarga"
+                    android:text="Comprar Passagem"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -83,7 +83,7 @@
                     android:background="@drawable/button_corner_black"
                     android:fontFamily="@font/ralewayregular"
                     android:gravity="center"
-                    android:text="Transferir recarga"
+                    android:text="Trans. Passagem"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -127,9 +127,9 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="150dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/borda_rigth_bottom"
+                    android:background="@drawable/borda_rigth"
                     android:orientation="vertical">
 
                     <TextView
@@ -155,71 +155,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borda_bottom"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/ralewayregular"
-                        android:gravity="center"
-                        android:text="Saldo Gasto"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/ralewayregular"
-                        android:gravity="center"
-                        android:text="R$ 0,00"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="0dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/borda_rigth"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/ralewayregular"
-                        android:gravity="center"
-                        android:text="Ultima Recarga"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/ralewayregular"
-                        android:gravity="center"
-                        android:text="15/01/2017"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="150dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -229,7 +165,7 @@
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/ralewayregular"
                         android:gravity="center"
-                        android:text="Transferencia de Saldo"
+                        android:text="Nova Revarga"
                         android:textColor="@color/white" />
 
                     <TextView
@@ -238,7 +174,7 @@
                         android:layout_marginBottom="20dp"
                         android:fontFamily="@font/ralewayregular"
                         android:gravity="center"
-                        android:text="R$ 0,00"
+                        android:text="17/03/2019"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
 

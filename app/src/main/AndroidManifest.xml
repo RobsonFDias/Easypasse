@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.com.easypasse">
 
+    <permission
+        android:name="br.com.easypasse.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="br.com.easypasse.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:installLocation="auto"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".view.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -62,8 +81,17 @@
             android:name=".view.ContaActivity"
             android:label="@string/title_activity_conta"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
-        <activity android:name=".view.FormaPagamentoActivity"
+        <activity
+            android:name=".view.FormaPagamentoActivity"
             android:label="@string/title_activity_cadastro_forma_pagamento"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".view.DadosCartaoPagamentoActivity"
+            android:label="@string/title_activity_dados_forma_pagamento"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".view.LocalizarOnibusActivity"
+            android:label="@string/title_activity_dados_forma_pagamento"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen" />
     </application>
 

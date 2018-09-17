@@ -1,7 +1,9 @@
 package br.com.easypasse.view;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -9,6 +11,11 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import br.com.easypasse.R;
+import br.com.easypasse.controller.UsuarioControle;
+import br.com.easypasse.dao.DatabaseHelper;
+import br.com.easypasse.dao.DatabaseManager;
+import br.com.easypasse.model.UsuarioModelo;
+import br.com.easypasse.utils.ObjetosTransitantes;
 
 public class ConfiguracaoActivity extends AppCompatActivity {
 
@@ -38,6 +45,14 @@ public class ConfiguracaoActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        RelativeLayout rlDesconectar = (RelativeLayout) findViewById(R.id.rlDesconectar);
+        rlDesconectar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sair();
+            }
+        });
     }
 
     @Override
@@ -56,5 +71,46 @@ public class ConfiguracaoActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+
+    private void desconectar() {
+        try {
+            DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
+
+            UsuarioModelo usuarioModelo = new UsuarioControle().buscarUsuarioId(ObjetosTransitantes.USUARIO_MODELO.getId());
+            if (usuarioModelo != null) {
+                usuarioModelo.setLogado("0");
+
+                new UsuarioControle().atualizarUsuario(usuarioModelo);
+
+                startActivity(new Intent(ConfiguracaoActivity.this, LogarCadastrarActivity.class));
+                finish();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sair() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Deseja realmente sair do EasyPasse");
+        alertDialogBuilder.setPositiveButton("sim",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        desconectar();
+                    }
+                });
+
+        alertDialogBuilder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 }

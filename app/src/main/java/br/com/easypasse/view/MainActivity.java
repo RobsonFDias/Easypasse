@@ -26,10 +26,6 @@ import java.util.ArrayList;
 
 import br.com.easypasse.R;
 import br.com.easypasse.adapter.NavDrawerListAdapter;
-import br.com.easypasse.controller.FormaPagamentoControle;
-import br.com.easypasse.dao.DatabaseHelper;
-import br.com.easypasse.dao.DatabaseManager;
-import br.com.easypasse.model.FormaPagamentoModelo;
 import br.com.easypasse.utils.ObjetosTransitantes;
 
 public class MainActivity extends AppCompatActivity {
@@ -68,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         iniciar();
 
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name) {
+        final ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -97,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
         navMenuIcons.recycle();
 
 
@@ -130,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -177,23 +172,16 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new PrincipalFragment();
                 break;
             case 1:
-
+                startActivity(new Intent(MainActivity.this, LocalizarOnibusActivity.class));
+                finish();
                 break;
             case 2:
-
+                indicar();
                 break;
             case 3:
-                if (buscarFormaPagamento()) {
-                    fragment = new CreditosFragment();
-                } else {
-                    startActivity(new Intent(MainActivity.this, FormaPagamentoActivity.class));
-                    finish();
-                }
-                break;
-            case 4:
                 fragment = new HistoricoFragment();
                 break;
-            case 5:
+            case 4:
                 startActivity(new Intent(MainActivity.this, ConfiguracaoActivity.class));
                 finish();
                 break;
@@ -219,23 +207,25 @@ public class MainActivity extends AppCompatActivity {
             }
 
             setTitle("");
+            mDrawerList.setItemChecked(position, true);
+            mDrawerList.setSelection(position);
+            mDrawerLayout.closeDrawer(linearLayout);
+
         }
     }
 
-    private Boolean buscarFormaPagamento() {
-        FormaPagamentoModelo formaPagamentoModelo = null;
+    private void indicar() {
         try {
-            DatabaseManager.initializeInstance(new DatabaseHelper(getApplicationContext()));
-
-            formaPagamentoModelo = new FormaPagamentoControle().buscarFormaPagamentoId(1);
-            if (formaPagamentoModelo == null) {
-                return false;
-            }
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBody = "Easy Passe Melhor Aplicativo para recarga de creditos";
+            String shareSub = "Melhor Aplicativo para recarga de creditos";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(sharingIntent, "Indicar"));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return true;
     }
 
 }

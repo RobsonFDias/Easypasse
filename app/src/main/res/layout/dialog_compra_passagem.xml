@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_linear_layout"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_vertical|center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ralewayregular"
+                            android:gravity="center"
+                            android:text="Escolha a quantidade de passagens que deseja comprar."
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlTres"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:orientation="vertical"
+                            android:paddingBottom="14dp"
+                            android:paddingLeft="14dp"
+                            android:paddingRight="14dp"
+                            android:paddingTop="14dp">
+
+                            <RadioButton
+                                android:id="@+id/rbTres"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:checked="true"
+                                android:layout_marginRight="12dp"
+                                android:buttonTint="@color/white" />
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="3dp"
+                                android:layout_toEndOf="@+id/rbTres"
+                                android:layout_toRightOf="@+id/rbTres"
+                                android:fontFamily="@font/ralewayregular"
+                                android:text="30 Passagens"
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/name"
+                                android:layout_alignStart="@+id/name"
+                                android:layout_alignTop="@+id/name"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/ralewayregular"
+                                android:gravity="center_vertical"
+                                android:text="Pagamento de R$ 108,99 "
+                                android:textColor="#888888" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorLinhaConfiguracao" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlDois"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:orientation="vertical"
+                            android:paddingBottom="14dp"
+                            android:paddingLeft="14dp"
+                            android:paddingRight="14dp"
+                            android:paddingTop="14dp">
+
+                            <RadioButton
+                                android:id="@+id/rbDois"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="12dp"
+                                android:buttonTint="@color/white" />
+
+                            <TextView
+                                android:id="@+id/name1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="3dp"
+                                android:layout_toEndOf="@+id/rbDois"
+                                android:layout_toRightOf="@+id/rbDois"
+                                android:fontFamily="@font/ralewayregular"
+                                android:text="20 Passagens"
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/name1"
+                                android:layout_alignStart="@+id/name1"
+                                android:layout_alignTop="@+id/name1"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/ralewayregular"
+                                android:gravity="center_vertical"
+                                android:text="Pagamento de R$ 72,99 "
+                                android:textColor="#888888" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorLinhaConfiguracao" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlUm"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:orientation="vertical"
+                            android:paddingBottom="14dp"
+                            android:paddingLeft="14dp"
+                            android:paddingRight="14dp"
+                            android:paddingTop="14dp">
+
+                            <RadioButton
+                                android:id="@+id/rbUm"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="12dp"
+                                android:buttonTint="@color/white" />
+
+                            <TextView
+                                android:id="@+id/name2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="3dp"
+                                android:layout_toEndOf="@+id/rbUm"
+                                android:layout_toRightOf="@+id/rbUm"
+                                android:fontFamily="@font/ralewayregular"
+                                android:text="10 Passagens"
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/name2"
+                                android:layout_alignStart="@+id/name2"
+                                android:layout_alignTop="@+id/name2"
+                                android:layout_marginTop="25dp"
+                                android:fontFamily="@font/ralewayregular"
+                                android:gravity="center_vertical"
+                                android:text="Pagamento de R$ 36,00 "
+                                android:textColor="#888888" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal"
+                    app:layout_anchorGravity="bottom">
+
+                    <Button
+                        android:id="@+id/btnProsseguir"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_corner_black"
+                        android:fontFamily="@font/ralewayregular"
+                        android:text="CONTINUAR"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+                    <Button
+                        android:id="@+id/btnSair"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_corner_black"
+                        android:fontFamily="@font/ralewayregular"
+                        android:text="CANCELAR"
+                        android:textColor="@android:color/holo_blue_dark" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
